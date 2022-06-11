@@ -1,0 +1,36 @@
+.search {
+    position: absolute;
+    left: 35%;
+    width:520px;
+    height:50px;
+    border-radius: 5px;
+    border: 2px solid #b0b0b0;
+    font-family: Verdana;
+    font-size: 25px;
+    padding-top: 0px;
+
+}
+.in{
+    width:475px;
+    height:45px;
+    margin-left: -30px;
+    border: none;
+   
+    
+    
+}
+.in:focus{
+    border: none;
+    outline:none;
+}
+.in::Placeholder {
+    font-size: 15px;
+}
+.icon{
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+
+    
+}

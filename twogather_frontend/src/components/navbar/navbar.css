@@ -2,17 +2,17 @@
     position: absolute;
     left: 35%;
     width:520px;
-    height:50px;
+    height:45px;
     border-radius: 5px;
     border: 2px solid #b0b0b0;
-    font-family: Verdana;
+    font-family: 'Radio Canada';
     font-size: 25px;
     padding-top: 0px;
 
 }
 .in{
     width:475px;
-    height:45px;
+    height:42px;
     margin-left: -30px;
     border: none;
    
@@ -25,6 +25,7 @@
 }
 .in::Placeholder {
     font-size: 15px;
+    
 }
 .icon{
     font-size: 25px;

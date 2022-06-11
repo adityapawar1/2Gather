@@ -1,0 +1,65 @@
+.signup{
+    background-color: white;
+    width: 510px;
+    height: 580px;
+    position: fixed;
+    left: 35.5%;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+#username{
+    background-color:#F0F0F0;
+    border: none;
+    outline: none;
+    width: 80%;
+    height: 40px;
+
+    border-radius: 3px;
+}
+#password{
+    background-color:#F0F0F0;
+    border: none;
+    outline: none;
+    width: 80%;
+    height: 40px;
+    border-radius: 3px;
+}
+#email{
+    background-color:#F0F0F0;
+    border: none;
+    outline: none;
+    width: 80%;
+    height: 40px;
+    border-radius: 3px;
+}
+#phone{
+    background-color:#F0F0F0;
+    border: none;
+    outline: none;
+    width: 80%;
+    height: 40px;
+    border-radius: 3px;
+}
+.labelSignup{
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    left: 30px;
+    font-weight: bold;
+    font-family: 'Radio Canada';
+}
+.submitButton{
+    background-color: #00D1FF;
+    border: none;
+    outline: none;
+    width: 82%;
+    height: 40px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Radio Canada';
+}

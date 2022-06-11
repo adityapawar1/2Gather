@@ -5,9 +5,35 @@ defmodule GatherWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :authenticated do
+    plug GatherWeb.Plugs.AuthPlug
+  end
+
+
   scope "/api", GatherWeb do
     pipe_through :api
+
   end
+
+  scope "/api/user", GatherWeb do
+    pipe_through :api
+
+    post "/signup", UserController, :signup
+    post "/signin", UserController, :signin
+    get "/profile/:id", UserController, :profile
+  end
+
+  scope "/api/user", GatherWeb do
+    pipe_through :authenticated
+
+    post "/edit", UserController, :edit_tags
+    get "/profile", UserController, :profile
+  end
+
+  scope "/api/event" do
+
+  end
+
 
   # Enables LiveDashboard only for development
   #

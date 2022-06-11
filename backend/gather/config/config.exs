@@ -8,7 +8,8 @@
 import Config
 
 config :gather,
-  ecto_repos: [Gather.Repo]
+  ecto_repos: [Gather.Repo],
+  secret: "tykcXZtwH6af1YpdDncu+GBC10jRfiTF3Zt03xm1PxZbTbeQGQRMPONBlFDv4HtHPtTHQ+tqY0x8xkC2tOcCgFnhutWXJUjOjVAJtTB3srxcu9vvl14zq/SFtabwfVVq"
 
 # Configures the endpoint
 config :gather, GatherWeb.Endpoint,

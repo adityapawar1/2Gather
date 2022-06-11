@@ -26,11 +26,7 @@ if config_env() == :prod do
   # to check this value into version control, so we use an environment
   # variable instead.
   secret_key_base =
-    System.get_env("SECRET_KEY_BASE") ||
-      raise """
-      environment variable SECRET_KEY_BASE is missing.
-      You can generate one by calling: mix phx.gen.secret
-      """
+    "5iUoAumzIwiyEvi9LrDjF/8onhNPYPrdi+3X4d8iiR1QTZJ8QdzGSap8HyXT7fl+"
 
   config :gather, GatherWeb.Endpoint,
     http: [

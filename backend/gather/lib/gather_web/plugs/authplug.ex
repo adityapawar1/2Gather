@@ -9,6 +9,11 @@ defmodule GatherWeb.Plugs.AuthPlug do
 
   def call(conn, _opts) do
     token = get_req_header(conn, "jwt_token") |> List.first()
+    token =
+      case token do
+        nil -> ""
+        _ -> token
+      end
 
     %{"id" => id} =
       case Gather.Signer.validate(token) do
@@ -21,7 +26,7 @@ defmodule GatherWeb.Plugs.AuthPlug do
     else
       conn
       |> put_resp_header("Content-Type", "application/json; charset=utf-8")
-      |> send_resp(400, Jason.encode!(%{error: "please sign in"}))
+      |> send_resp(400, Jason.encode!(%{error: "Not signed in"}))
       |> halt()
     end
   end

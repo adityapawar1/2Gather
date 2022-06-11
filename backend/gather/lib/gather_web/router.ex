@@ -30,8 +30,10 @@ defmodule GatherWeb.Router do
     get "/profile", UserController, :profile
   end
 
-  scope "/api/event" do
+  scope "/api", GatherWeb do
+    pipe_through :authenticated
 
+    resources "/event", EventController, except: [:update, :delete, :edit, :new]
   end
 
 

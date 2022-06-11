@@ -5,7 +5,7 @@ defmodule GatherWeb.UserController do
 
   def signup(conn, %{"name" => name, "password" => password, "phone" => phone, "email" => email, "tags" => tags}) do
     hashed_password = Bcrypt.Base.hash_password(password, Bcrypt.Base.gen_salt(12, true))
-    user = %User{} |> User.changeset(%{name: name, password: hashed_password, phone: phone, email: email, tags: tags})
+    user = %User{} |> User.changeset(%{name: name, password: hashed_password, phone: phone, email: email, tags: lowercase_tags(tags)})
     {status, output} = Repo.insert(user)
 
     reason =
@@ -69,5 +69,9 @@ defmodule GatherWeb.UserController do
 
   def edit_tags(conn, _params) do
     json(conn, %{"error" => "Missing one or more required parameters"})
+  end
+
+  defp lowercase_tags(tags) do
+    Enum.map(tags, fn tag -> String.downcase(tag) end)
   end
 end

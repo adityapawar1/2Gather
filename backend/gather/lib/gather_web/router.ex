@@ -34,6 +34,8 @@ defmodule GatherWeb.Router do
     pipe_through :authenticated
 
     resources "/event", EventController, except: [:update, :delete, :edit, :new]
+    get "/event/tag/contains/any", EventController, :contains_any_tag
+    get "/event/tag/contains/all", EventController, :contains_all_tags
   end
 
 

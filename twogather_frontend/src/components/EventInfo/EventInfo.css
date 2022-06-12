@@ -18,7 +18,7 @@
     font-size: 20px;
     position: absolute;
     left: 50px;
-    top: 100px;
+    top: 30px;
 
 }
 .map{
@@ -37,7 +37,7 @@
     border-radius: 5px;
 }
 .button{
-    background-image: linear-gradient(to right, rgb(56, 189, 248), rgb(59, 130, 246));
+  background-color: #1C3D52;
   border: none;
   color: white;
   padding: 15px 32px;

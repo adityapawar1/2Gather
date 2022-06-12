@@ -1,6 +1,6 @@
 import React from "react";
 import "./events.css";
-import EventInfo from "../../components/eventInfo/EventInfo";
+import EventInfo from "../../components/EventInfo/EventInfo";
 import EventScroller from "../../components/EventScroller/EventScroller";
 // git pls
 const Events = () => {

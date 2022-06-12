@@ -12,7 +12,7 @@ function Event(){
     <div>
       <div className="event-banner"></div>
       <div className="text-left">
-        <div>
+        {/* <div>
           Event Title
         </div>
         <div>
@@ -20,7 +20,7 @@ function Event(){
         </div>
         <div>
           5 Participants
-        </div>
+        </div> */}
       </div>
     </div>
   );

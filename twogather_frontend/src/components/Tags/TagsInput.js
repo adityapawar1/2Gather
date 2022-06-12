@@ -3,12 +3,15 @@ import { Children, useState } from "react";
 function TagsInput({ children }) {
   const [tags, setTags] = useState([]);
 
+  
+
   function handleKeyDown(e) {
     if (e.key !== "Enter") return;
     const value = e.target.value;
     if (!value.trim()) return;
     setTags([...tags, value]);
     e.target.value = "";
+    
   }
 
   function removeTag(index) {

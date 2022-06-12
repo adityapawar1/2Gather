@@ -16,7 +16,7 @@ function App() {
       {/* <Routes> */}
         {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}
-        <Events />
+        {/* <Events /> */}
       {/* </Routes>
     </Router> */}
       <SearchBar/>

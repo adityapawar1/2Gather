@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Col, Row, Container } from "react-bootstrap";
+
 class User extends React.Component {
   constructor(props) {
     let tag_list = []; // backend call to get list of activities

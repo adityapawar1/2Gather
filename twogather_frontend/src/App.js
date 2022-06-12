@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './pages/home/home.js';
-import Profile from './pages/profile/profile.js';
-import Navbar from './components/navbar/index.js';
-import Signup from './pages/signup/signup.js';
+import Home from './pages/home/Home';
+import Profile from './pages/profile/Profile';
+import Navbar from './components/navbar/Navbar';
+import Signup from './pages/signup/Signup';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {

@@ -18,8 +18,9 @@ import profile from '../../assets/pfp.jpeg';
 function NavBar() {
   const [show, setShow] = useState(false);
   return (
+    <>
       <Container fluid>
-        <Modal show={show}/>
+        <Modals show={show}/>
         <Row className="p-3">
           <Col xs={2} className="text-left">
             <Navbar.Brand>
@@ -54,6 +55,7 @@ function NavBar() {
           </Col>
         </Row>
       </Container>
+      </>
   );
 }
 

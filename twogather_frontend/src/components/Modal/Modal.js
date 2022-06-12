@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Modal,Form, Col, Row, Button} from 'react-bootstrap';
 import "./Modal.css";
-import Tags from '../Tags/Tags.js';
+import Tags from '../tags/Tags.js';
 function Modals(props){
     const [show, setShow] = useState(props.show);
     const [title, setTitle] = useState("");

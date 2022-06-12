@@ -1,0 +1,19 @@
+.search-bar {
+    max-width: 800px;
+    min-width: 150px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0.5em;
+    /* border-color: red !important; */
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.btn {
+    border-radius: 5px;
+    /* margin-left: 60% !important; */
+    float: right !important;
+    background-color: #3E74DC;
+    margin: 0 !important;
+}
+.btn:focus {outline:0 !important;}

@@ -16,14 +16,15 @@ function TagsInput(){
     }
 
     return (
-        <div className="p-2">
-            { tags.map((tag, index) => (
+        <div className="p-2 flex-container">
+            {tags.map((tag, index) => (
                 <div className="tag-item m-1" key={index}>
-                    <span className="ml-1 text">{tag}</span>
+                    <span className="ml-1 text">{tag}</span> 
                     <span className="close" onClick={() => removeTag(index)}>&times;</span>
                 </div>
             )) }
-            <input onKeyDown={handleKeyDown} type="text" className="tags-input" placeholder="Find Gatherings..." />
+                <input onKeyDown={handleKeyDown} type="text" className="tags-input container-fluid pl-0" placeholder="Find Gatherings..." />
+            
         </div>
     )
 }

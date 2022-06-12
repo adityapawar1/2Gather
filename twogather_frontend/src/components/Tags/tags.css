@@ -23,15 +23,18 @@
 
 .tags-input{
     flex-grow: 1;
-    padding: .5em 0;
     border: none;
     outline: none;
     background-color: white;
+    text-align: left;
 
 }
 .tags-input::placeholder{
     font-family: 'Radio Canada';
-    padding-left: 10px;
     font-size: 15px;
     color: #B5B7BA
+}
+
+.flex-container {
+    display: flex;
 }

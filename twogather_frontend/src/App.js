@@ -44,14 +44,14 @@ function App() {
       <div className="App">
         {/* <SocketProvider url={socketUrl} options={socketOptions}> */}
           {/* <Router> */}
-          {/* <NavBar/> */}
+          <NavBar/>
           {/* <Login/> */}
-          <Signup />
+          {/* <Signup /> */}
           {/* <Routes> */}
           {/* <Route exact path="/home" element={<Home/>} />
           <Route exact path="/profile" element={<Events/>} /> */}
         {/* <Home/> */}
-        {/* <Events/> */}
+        <Events/>
       </div>
     </UserProvider>
   );

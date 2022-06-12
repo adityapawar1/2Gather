@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <div className="greeting-header m-4">
-        Welcome [user]
+        Welcome <span className="user">[user]</span>
       </div>
       <div>
         <div className="gathering-list">

@@ -17,3 +17,13 @@
     margin: 0 !important;
 }
 .btn:focus {outline:0 !important;}
+.text-left{
+    font-family: 'Radio Canada';
+    font-weight: bold;
+    margin-top: 10px;
+}
+.create-gathering-btn{
+    font-family: 'Radio Canada';
+    font-weight: bold;
+  
+}

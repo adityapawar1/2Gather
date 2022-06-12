@@ -11,11 +11,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Navbar />
+      <NavBar/>
       <Routes>
         <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} />
-        
       </Routes>
     </Router>
     </div>

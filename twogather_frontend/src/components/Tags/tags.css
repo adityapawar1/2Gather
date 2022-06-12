@@ -1,21 +1,5 @@
 
-
-.tags-input-container{
-
-
-    border-radius: 3px;
-    width: 82%;
-    margin-top: 1em;
-    display: flex;
-    
-    align-items: center;
-    flex-wrap: wrap;
-    gap: .5em;
-    background-color: #F0F0F0;
-    margin-left: 9%;
-}
-
-
+/* maybe make background color be a random color */
 .tag-item{
     background-color: rgb(218, 216, 216);
     display: inline-block;
@@ -25,14 +9,15 @@
 .tag-item .close{
     height: 20px;
     width: 20px;
-    background-color: rgb(48, 48, 48);
-    color: #fff;
+    color: black;
+    /* background-color: black; */
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-left: .5em;
-    font-size: 18px;
+    margin-left: .35em;
+    margin-top: .15em;
+    font-size: 15px;
     cursor: pointer;
 }
 
@@ -42,11 +27,11 @@
     border: none;
     outline: none;
     background-color: white;
-    border-color: #f3f1fc
+
 }
 .tags-input::placeholder{
     font-family: 'Radio Canada';
     padding-left: 10px;
     font-size: 15px;
-    color: #f3f1fc
+    color: #B5B7BA
 }

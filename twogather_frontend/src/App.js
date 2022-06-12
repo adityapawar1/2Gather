@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
 import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
 import { UserProvider } from "./UserContext";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import { SocketProvider } from "./SocketContext";
 import Event from "./components/Events/Event";
 import EventList from "./components/Events/EventList";

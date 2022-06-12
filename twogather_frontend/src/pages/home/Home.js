@@ -7,7 +7,9 @@ const Home = () => {
 
   return (
     <div>
-      s
+      <button>
+
+      </button>
     </div>
   )
 }

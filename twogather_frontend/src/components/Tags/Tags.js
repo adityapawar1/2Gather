@@ -6,12 +6,11 @@ import TagsInput from "./TagsInput.js";
 class Tags extends React.Component {
   constructor(props) {
     super(props);
-    
   }
   render() {
     return (
       <React.Fragment>
-        <TagsInput />
+        <TagsInput tagger={(ntag)=>{this.props.tagger(ntag)}} rtagger={(i)=>{this.props.rtagger(ntag)}}/>
       </React.Fragment>
     );
   }

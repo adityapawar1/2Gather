@@ -1,26 +1,36 @@
 import React, {useState} from "react";
-
 import { Col, Row, Container } from "react-bootstrap";
+import './event.css'
 
-function Event(){
+function Event(props){
   
-  const [amount, setAmount] = useState(1);
-  const [title, setTitle] = useState(1);
+  // let eventDescription
+  
+  // if(props){
+  //   eventDescription = props.eventDescription
+  // }
 
+  // let eventDescription = {
+  //   startTime: ""
 
+  // };
+
+  //Add Icon for Participants maybe
   return (
-    <div>
-      <div className="event-banner"></div>
-      <div className="text-left">
-        {/* <div>
+    <div className= "m-2 event">
+      <div className="event-banner m-0 p-0"></div>
+      <div className="text-left p-3">
+        <div className="event-title">
           Event Title
         </div>
-        <div>
-          June 12 8pm to Jun 12 9pm · Central Park, CA
+        <div className="text-muted">
+          <div>
+            June 12 8pm to Jun 12 9pm · Central Park, CA
+          </div>
+          <div>
+            5 Participants
+          </div>
         </div>
-        <div>
-          5 Participants
-        </div> */}
       </div>
     </div>
   );

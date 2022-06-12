@@ -10,15 +10,15 @@
     font-weight:bold;
     font-size:25px;
     position: absolute;
-    left: 50px;
+    left: 70px;
     font-family: 'Radio Canada';
 }
 #host{
     font-family: 'Radio Canada';
     font-size: 20px;
     position: absolute;
-    left: 50px;
-    top: 30px;
+    left: 70px;
+    top: 36px;
 
 }
 .map{
@@ -26,6 +26,7 @@
     margin-top: 5px;
     height:250px;
     background-color: blue;
+    border-radius: 15px;
 }
 
 #register{
@@ -33,7 +34,7 @@
     border: none;
     outline: none;
     position: absolute;
-    right: 44%;
+    right: 46%;
     border-radius: 5px;
 }
 .button{
@@ -69,7 +70,7 @@
 
 .tags{
     position:fixed;
-    left: 30px;
+    left: 55px;
     padding-top: 10px;
     
 }

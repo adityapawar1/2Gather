@@ -1,7 +1,6 @@
-import { ReactNode, useContext, useEffect, useRef, useState } from "react";
+import { ReactNode, useContext, useState } from "react";
 import UserContext from "../../store";
 import "./Chat.css";
-import { Socket } from "phoenixjs";
 import ChatMessage from "./ChatMessage.tsx";
 import {
   sendMessage,
@@ -54,7 +53,7 @@ export default function Chat({ event_id }: ChatProps) {
   const [messages, setMessages] = useState<Message[]>(testMessages);
   const { user_name, jwt_token }: UserContextType = useContext(UserContext);
 
-  const channel: any = useChannel(
+  const { channel: chatChannel }: any = useChannel(
     "event:" + event_id,
     { token: jwt_token },
     (x, y) => {}

@@ -25,8 +25,10 @@ const EventInfoTabs = () => {
                 </div>    
                 <div id="info">
                     <br></br>
+                    
                     6 People
                 </div></Col>
+                {/* <Col className="hiddenColumn">    </Col> */}
                 <Col>
                     <button id="open_chat">
                 Open Chat

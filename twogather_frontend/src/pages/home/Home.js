@@ -1,11 +1,13 @@
-import React from 'react'
-
-// const Cont = React.createContext();
+import React, {useState, useContext, useEffect} from 'react';
+import {UserContext} from '../../UserContext';
 
 const Home = () => {
-    
+  //user data, still have to add api though
+  const [data, setData] = useContext(UserContext);
+
   return (
     <div>
+      s
     </div>
   )
 }

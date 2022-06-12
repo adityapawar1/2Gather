@@ -4,8 +4,8 @@
             "description": "Come play Soccer with everyone",
             "location": {
                 "address": "123 Vivvy Avenue",
-                "lat": "1213",
-                "lng": "1242"
+                "lat": "45",
+                "lng": "32"
             },
             "organizer": "neew@gmai2l.com",
             "participants": [],
@@ -23,8 +23,8 @@
             "description": "Come play Soccer with everyone",
             "location": {
                 "address": "123 Vivvy Avenue",
-                "lat": "1213",
-                "lng": "1242"
+                "lat": "45",
+                "lng": "32"
             },
             "organizer": "neew@gmai2l.com",
             "participants": [],
@@ -42,8 +42,8 @@
             "description": "Come play Basketball with everyone",
             "location": {
                 "address": "123 Vivvy Avenue",
-                "lat": "1213",
-                "lng": "1242"
+                "lat": "45",
+                "lng": "32"
             },
             "organizer": "neew@gmai2l.com",
             "participants": [],
@@ -61,8 +61,8 @@
             "description": "Come play Hackathon with everyone",
             "location": {
                 "address": "123 Vivvy Avenue",
-                "lat": "1213",
-                "lng": "1242"
+                "lat": "45",
+                "lng": "32"
             },
             "organizer": "neew@gmai2l.com",
             "participants": [],
@@ -77,11 +77,11 @@
             "title": "Hackathon"
         },
         {
-            "description": "Come play Soccer with everyone",
+            "description": "Meet the President",
             "location": {
-                "address": "123 Vivvy Avenue",
-                "lat": "1213",
-                "lng": "1242"
+                "address": "The White House",
+                "lat": "38.8977",
+                "lng": "-77.0365"
             },
             "organizer": "neew@gmai2l.com",
             "participants": [],
@@ -93,14 +93,14 @@
                 "end": "June 06 2022, 12PM",
                 "start": "June 05 2022, 12PM"
             },
-            "title": "Soccer"
+            "title": "President"
         },
         {
             "description": "Come play Soccer with everyone",
             "location": {
                 "address": "123 Vivvy Avenue",
-                "lat": "1213",
-                "lng": "1242"
+                "lat": "45",
+                "lng": "32"
             },
             "organizer": "neew@gmai2l.com",
             "participants": [],

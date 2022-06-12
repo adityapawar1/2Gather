@@ -1,8 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react';
-import Modal from '../../'
 import {UserContext} from '../../UserContext';
 import EventList from '../../components/Events/EventList';
-import Modals from '/Users/roshanb/Documents/GitHub/2Gather/twogather_frontend/src/components/Modal/Modal.js';
 import "./home.css";
 
 
@@ -31,10 +29,9 @@ const Home = () => {
         <div className="gathering-list">
           <EventList/>
         </div>
-        <Modals show={true}/>
       </div>
     </>
-  );
+  )
 }
 
 export default Home;

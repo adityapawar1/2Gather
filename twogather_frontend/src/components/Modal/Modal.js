@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Modal,Form, Col, Row, Button} from 'react-bootstrap';
+import "./Modal.css";
 import Tags from '../Tags/Tags.js';
 function Modals(props){
     const [show, setShow] = useState(props.show);
@@ -31,14 +32,14 @@ function Modals(props){
         setTags(tags.filter((el, i) => i !== index));
     }
     return(
-        <Modal show={show}>
+        <Modal show={props.show}>
             <Modal.Body>
                 <Col>
                     <Modal.Title>
                         Event Title
                     </Modal.Title>
                     <Form.Control type="title" placeholder="Title" onChange={(ref)=>{setTitle(ref.target.value);}} />
-                    <Row>
+                    <Row id="r1">
                         <Col>
                             <Form.Label>
                                 Location
@@ -52,7 +53,7 @@ function Modals(props){
                             <Tags tagger={(ntag)=>{addTag(ntag)}} rtagger={(i)=>{removeTag(i)}}/>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row id="r2">
                         <Col>
                             <Form.Group controlId="dob">
                                 <Form.Label>Select Date</Form.Label>
@@ -66,7 +67,7 @@ function Modals(props){
                             <Form.Control placeholder="Description" onChange={(ref)=>{setDescrip(ref.target.value);}}/>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row id="r3">
                         <Col>
                             <Form.Label>
                                 Start Time
@@ -86,7 +87,7 @@ function Modals(props){
                 <Button variant="secondary" onClick={handleClose1}>
                     Close
                 </Button>
-                <Button variant="primary" onClick={handleClose2}>
+                <Button variant="primary" id="button1" onClick={handleClose2}>
                     Save Changes
                 </Button>
             </Modal.Footer>

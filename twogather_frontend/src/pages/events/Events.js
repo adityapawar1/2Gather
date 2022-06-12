@@ -1,7 +1,7 @@
 import React from "react";
 import "./events.css";
-import EventInfo from "../../components/EventInfo/EventInfo.js";
-import EventScroller from "../../components/EventScroller/EventScroller.js";
+import EventInfo from "../../components/EventInfo/EventInfo";
+import EventScroller from "../../components/EventScroller/EventScroller";
 // git pls
 const Events = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Modal,Form, Col, Row} from 'react-bootstrap';
+import {Modal,Form, Col, Row, Button} from 'react-bootstrap';
 import Tags from '../Tags/Tags.js';
 function Modals(props){
     const [show, setShow] = useState(props.show);
@@ -10,51 +10,87 @@ function Modals(props){
     const [date, SetDate] = useState("");
     const [startTime, SetStartTime] = useState("");
     const [endTime, SetEndTime] = useState("");
-    const handleClose = () => setShow(false);
+    const handleClose1 = () =>{
+        setShow(false);
+    }
+    const handleClose2 = () =>{
+        let w1 = (title!="" && description!="" && location!=""&& date!="" && startTime!="" && endTime!="");
+        if (w1){
+            setShow(false);
+        }else{
+            alert("Missing or Incorrect Information!");
+        }
+    }
     const handleShow = () => setShow(true);
     function addTag(ntag){
-        ntags = tags;
+        let ntags = tags;
         ntags.push(ntag)
         setTags(ntags);
     }
-    function removeTag(i){
+    function removeTag(index){
         setTags(tags.filter((el, i) => i !== index));
     }
     return(
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show}>
             <Modal.Body>
-                <Form.Label>
-                    Event Title
-                </Form.Label>
-                <Form.Control type="title" placeholder="Title" inputRef={(ref)=>{setTitle(ref);}} />
                 <Col>
+                    <Modal.Title>
+                        Event Title
+                    </Modal.Title>
+                    <Form.Control type="title" placeholder="Title" onChange={(ref)=>{setTitle(ref.target.value);}} />
                     <Row>
-                        <Form.Label>
-                            Location
-                        </Form.Label>
-                        <Form.Control type="address" placeholder="Address" inputRef={(ref)=>{setLoc(ref);}} />
-                        <Form.Group controlId="dob">
-                            <Form.Label>Select Date</Form.Label>
-                            <Form.Control type="date" name="dob" placeholder="Date of Birth" inputRef={(ref)=>{SetDate(ref)}}/>
-                        </Form.Group>
-                        <Form.Label>
-                            Start Time
-                        </Form.Label>
-                        <Form.Control type="time" placeholder="9:00 AM" inputRef={(ref)=>{setStartTime(ref);}}/>
-                        <Form.Label>
-                            End Time
-                        </Form.Label>
-                        <Form.Control type="time" placeholder="9:00 PM" inputRef={(ref)=>{setEndTime(ref);}}/>
+                        <Col>
+                            <Form.Label>
+                                Location
+                            </Form.Label>
+                            <Form.Control type="address" placeholder="Address" onChange={(ref)=>{SetLoc(ref.target.value);}} />
+                        </Col>
+                        <Col>
+                            <Form.Label>
+                                Tags
+                            </Form.Label>
+                            <Tags tagger={(ntag)=>{addTag(ntag)}} rtagger={(i)=>{removeTag(i)}}/>
+                        </Col>
                     </Row>
                     <Row>
-                        <Tags tagger={(ntag)=>{addTag(ntag)}} rtagger={(i)=>{removeTag(i)}}/>
-                        <Form.Label>
-                            Description
-                        </Form.Label>
-                        <Form.Control placeholder="Description" inputRef={(ref)=>{setDescrip(ref);}}/>
+                        <Col>
+                            <Form.Group controlId="dob">
+                                <Form.Label>Select Date</Form.Label>
+                                <Form.Control type="date" name="dob" placeholder="Date of Birth" onChange={(ref)=>{SetDate(ref.target.value)}}/>
+                            </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Label>
+                                Description
+                            </Form.Label>
+                            <Form.Control placeholder="Description" onChange={(ref)=>{setDescrip(ref.target.value);}}/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Form.Label>
+                                Start Time
+                            </Form.Label>
+                            <Form.Control type="time" placeholder="9:00 AM" onChange={(ref)=>{SetStartTime(ref.target.value);}}/>
+                        </Col>
+                        <Col>
+                            <Form.Label>
+                                    End Time
+                            </Form.Label>
+                            <Form.Control type="time" placeholder="9:00 PM" onChange={(ref)=>{SetEndTime(ref.target.value);}}/>
+                        </Col>
                     </Row>
                 </Col>
             </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose1}>
+                    Close
+                </Button>
+                <Button variant="primary" onClick={handleClose2}>
+                    Save Changes
+                </Button>
+            </Modal.Footer>
         </Modal>
     )
 }
+export default Modals;

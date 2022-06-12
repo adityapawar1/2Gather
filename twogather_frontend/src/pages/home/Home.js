@@ -2,21 +2,18 @@ import React, {useState, useContext, useEffect} from 'react';
 import Modal from '../../'
 import {UserContext} from '../../UserContext';
 import EventList from '../../components/Events/EventList';
+import Modals from '/Users/roshanb/Documents/GitHub/2Gather/twogather_frontend/src/components/Modal/Modal.js';
 import "./home.css";
 
 
 const Home = () => {
   //user data, still have to add api though
   const [data, setData] = useContext(UserContext);
-
+  const [showModal, setModal] = useState(true);
+  function makeEvent(){
+    setModal(true);
+  }
   return (
-<<<<<<< HEAD
-    <div>
-      <button onClick={}>
-
-      </button>
-    </div>
-=======
     <>
       <div className="greeting-header m-4">
         Welcome [user]
@@ -34,10 +31,10 @@ const Home = () => {
         <div className="gathering-list">
           <EventList/>
         </div>
+        <Modals show={true}/>
       </div>
     </>
->>>>>>> c36f23d84798decbdf3e5ab4592b6ccc864e7a75
-  )
+  );
 }
 
 export default Home;

@@ -35,7 +35,7 @@ function TagsInput({ children }) {
           onKeyDown={handleKeyDown}
           type="text"
           className="w-1/6 justify-end overflow-auto flex-grow"
-          placeholder="Find Gatherings..."
+          placeholder="Tags"
         />
       </div>
     </div>

@@ -1,10 +1,59 @@
-import React from 'react'
-import './EventScroller.css'
+import React from 'react';
+import './EventScroller.css';
+import events from './events.json';
 
-const EventScroller = () => {
+let bgColorList = ['gray', 'red', 'blue']
+function Event(props) {
   return (
-    <div>EventScroller</div>
-  )
+    <>
+      
+      <a href="#">
+          <button className={`EC${props.value}`} id={`event${props.value}`} onClick={props.onClick}>
+            <span>
+                      
+                          <div className="Event_name">{props.title}</div>
+                          <div className="Event_time">{props.time}</div>
+                          <div className="Event_address">{props.address}</div>
+                          <div className="Event_tags">Tags: {props.tags}</div>
+                      
+                  </span>
+          </button>
+      </a>   
+      </>
+      );
 }
 
-export default EventScroller
+class EventScroller extends React.Component {
+  
+  constructor(props) {
+      super(props)
+      this.state = {
+          eventJson: events.events
+      }
+  }
+
+  createEvent = (item, i) => {
+      console.log(item, i);
+      
+      return <Event value={i} onClick={this.handleClick} title={item.title} time={item.time['start']} address={item.location["address"]} tags={item.tags.join(", ")} color={bgColorList[i % bgColorList.length]} />
+  }
+
+  handleClick = (event) => {
+      console.log(event.target.id)
+      console.log(document.getElementById(`Event${event.target.id}`));
+  }
+
+  render() {
+      return <>
+            
+          <div className="Overall_Container">
+          <div className="bigTitle">
+              Recommended Events
+            </div>
+              {this.state.eventJson.map((item, i) => {return this.createEvent(item, i)})}
+            </div>
+          </>
+  }
+}
+
+export default EventScroller;

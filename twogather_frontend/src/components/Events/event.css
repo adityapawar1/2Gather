@@ -1,0 +1,35 @@
+/* .event{
+    background-color: cyan;
+    position: relative;
+    width: 20%;
+    height: 0;
+    padding-bottom: 20%;
+    border-radius: 10px;
+    transition: transform .2s;
+} */
+
+.event{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    transition: transform .2s;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+
+.event:hover{
+    transform: scale(1.025);
+}
+
+.event-banner{
+    height: 160px;
+    width: 100%;
+    background-color: black;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.event-title{
+    font-weight: 700;
+}

@@ -47,7 +47,8 @@ defmodule Gather.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:bcrypt_elixir, "~> 3.0"},
       {:joken, "~> 2.4"},
-      {:exconstructor, "~> 1.2.6"}
+      {:exconstructor, "~> 1.2.6"},
+      {:cors_plug, "~> 3.0"}
     ]
   end
 

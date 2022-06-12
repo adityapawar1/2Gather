@@ -19,22 +19,27 @@ class Signup extends React.Component {
 
   SubmitSignupHandler = async (e) => {
     e.preventDefault();
-    let data = new FormData();
-
-    data.append("username", document.getElementById("username").value);
-    data.append("password", document.getElementById("password").value);
-    data.append("email", document.getElementById("email").value);
-    data.append("phone", document.getElementById("phone").value);
+    var data = JSON.stringify({
+      "name": document.getElementById("username").value,
+      "password": document.getElementById("password").value,
+      "phone": document.getElementById("phone").value,
+      "email": document.getElementById("email").value,
+      "tags": [
+        "bbal",
+        "robotics",
+        "soccer"
+      ]
+    });
 
     console.log(data);
 
     let response = await axios({
       method: "post",
-      url: "http://127.0.0.1:8000/accounts/signup",
+      url: "http://localhost:4000/api/user/signup",
       data: data,
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { 'Content-Type': 'application/json' },
+      data : data
     });
-    console.log(document.getElementById("gender").checked);
     console.log(response);
     if (response.data.hasOwnProperty("valid")) {
       if (!response.data.valid) {
@@ -161,6 +166,9 @@ class Signup extends React.Component {
             <Tags></Tags>
             <br></br>
             <label className="error">{this.state.phoneStatus}</label>
+            <button className="submitButton" onClick={this.SubmitSignupHandler}>
+              Sign Up
+            </button>
           </div>
           {/* <div>
                         <label class="gender">Gender:&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;F</label>
@@ -173,9 +181,7 @@ class Signup extends React.Component {
                         <label className="error">{this.state.genderStatus}</label>
                     </div> */}
           <div class="container1">
-            <button className="submitButton" onClick={this.SubmitSignupHandler}>
-              Sign Up
-            </button>
+            
             {/* eslint-disable-next-line */}
             {/* <a href="#" onClick={this.SubmitSignupHandler}>
                         <SubmitSignupLink to="/" class="submitButton">Submit</SubmitSignupLink>

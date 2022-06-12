@@ -1,35 +1,24 @@
 import { React, useState } from "react";
-import TextField from "@mui/material/TextField";
-// import List from "./List";
 import "./searchbar.css";
-import TagsInput from '../tags/TagsInput'
-import searchIcon from '../../assets/search_icon.svg';
-import {
-  Container,
-  Row,
-  Col,
-} from 'react-bootstrap'
+import TagsInput from "../Tags/TagsInput.js";
+import searchIcon from "../../assets/search_icon.svg";
 
 function SearchBar() {
-
-
-  //We can add the list later and just say we didn't find any for the categories that don't exist 
+  //We can add the list later and just say we didn't find any for the categories that don't exist
   return (
-    <Container fluid>
-      <Row className="search-bar">
-        <Col xs={1}>
+    <div className="w-1/2 border-black border-1 flex flex-row m-5 rounded-[5px]">
+      <div className="w-full justify-end">
+        <TagsInput>
           <img
+            className="m-2"
             alt="search icon"
             src={searchIcon}
-            width="15"
-            height="15"
+            width="25"
+            height="25"
           />
-        </Col>
-        <Col xs={11}>
-          <TagsInput/>
-        </Col>
-      </Row>
-    </Container>
+        </TagsInput>
+      </div>
+    </div>
   );
 }
 

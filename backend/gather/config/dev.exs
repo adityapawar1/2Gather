@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :gather, Gather.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "gather_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,

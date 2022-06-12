@@ -16,14 +16,15 @@ function App() {
     <div className="App">
       <UserContext.Provider
         value={{
-          user_name: "test1",
+          user_name: "Some Person",
           user_email: "test@gmail.com",
           user_id: 5,
         }}
       >
-        {/* <Chat event_id={"dasjkldja"}></Chat> */}
+        {/* <Chat event_id={"dasjkldja"}></Chat>
         {/* <Router> */}
         {/* <NavBar/> */}
+        <Signup />
         {/* <Routes> */}
         {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}

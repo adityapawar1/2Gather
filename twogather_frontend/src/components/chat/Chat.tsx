@@ -1,5 +1,4 @@
 import { ReactNode, useContext, useState } from "react";
-import UserContext from "../../store";
 import "./Chat.css";
 import ChatMessage from "./ChatMessage.tsx";
 import {
@@ -7,6 +6,7 @@ import {
   useChannel,
   useEventHandler,
 } from "@ericlathrop/phoenix-js-react-hooks";
+import UserContext from "../../UserContext";
 
 type ChatProps = {
   event_id: number | null;

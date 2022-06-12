@@ -1,24 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./pages/home/Home.js";
-import Profile from "./pages/profile/profile.js";
+import Profile from "./pages/profile/Profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
 import Signup from "./pages/signup/Signup.js";
 import Events from "./pages/events/Events.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
-<<<<<<< HEAD
-import UserContext from "./store";
 import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
-=======
-import {UserProvider} from "./UserContext";
+import { UserProvider } from "./UserContext";
 // import { SocketProvider } from "./SocketContext";
->>>>>>> 0c2b3f31b25cc2553d2b112e9ef2c460f1cc0925
 import Event from "./components/Events/Event";
-import EventList from './components/Events/EventList';
+import EventList from "./components/Events/EventList";
 
 function App() {
   const socketUrl = "ws://localhost:4000/socket";
@@ -31,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <UserContext.Provider
+      <UserProvider
         value={{
           user_name: "Some Person",
           user_email: "test@gmail.com",
@@ -39,19 +35,19 @@ function App() {
         }}
       >
         <SocketProvider url={socketUrl} options={socketOptions}>
-          <Chat event_id={"dasjkldja"}></Chat>
-        {/* <Router> */}
-        {/* <NavBar/> */}
-        {/* <Signup /> */}
-        {/* <Routes> */}
-        {/* <Route exact path="/home" element={<Home/>} />
+          {/* <Router> */}
+          {/* <NavBar/> */}
+          {/* <Signup /> */}
+          {/* <Routes> */}
+          {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}
-        {/* <Events /> */}
-        {/* </Routes>
+          {/* <Events /> */}
+          <Route exact path="/profile" element={<Chat event_id={"jdksa"} />} />
+          {/* </Routes>
     </Router> */}
-        {/* <SearchBar /> */}
+          {/* <SearchBar /> */}
         </SocketProvider>
-      </UserContext.Provider>
+      </UserProvider>
     </div>
   );
 }

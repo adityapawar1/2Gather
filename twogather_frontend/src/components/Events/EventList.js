@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {UserContext} from '../../UserContext';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 
 import Event from './Event';
 import './event.css';
@@ -9,15 +9,41 @@ import './event.css';
 const EventList = (props) => {
     //call api for getting event
 
-    const moveBack = () => {};
-    const moveForward = () => {};
+    const slideLeft = () => {
+        var slider = document.getElementById('slider');
+        slider.scrollLeft = slider.scrollLeft - 500;
+    };
+    const slideRight = () => {
+        var slider = document.getElementById('slider');
+        slider.scrollLeft = slider.scrollLeft + 500;
+    };
 
     return(
         <div>
-            <ArrowBackIosNewIcon onClick={moveBack}/>
-            <div>Sports</div>
+            <div className="list-header">
+                <div className="tag-title ml-4">Sports</div>
+                <div className="slide-bar mr-4">
+                    <ArrowBackIosRoundedIcon onClick={slideLeft} width="10" height="30" className="m-0"/>
+                    <ArrowForwardIosRoundedIcon onClick={slideRight} width="30" height="30" className="ml-4"/>
+                </div>
+            </div>
             {/* map data */}
-            <div>
+            <div id="slider" className="event-list pl-3">
+                <div className="event-card">
+                    <Event/>
+                </div>
+                <div className="event-card">
+                    <Event/>
+                </div>
+                <div className="event-card">
+                    <Event/>
+                </div>
+                <div className="event-card">
+                    <Event/>
+                </div>
+                <div className="event-card">
+                    <Event/>
+                </div>
                 <div className="event-card">
                     <Event/>
                 </div>
@@ -31,7 +57,6 @@ const EventList = (props) => {
                     <Event/>
                 </div>
             </div>
-            <ArrowForwardIosIcon onClick={moveForward}/>
         </div>
     );
 

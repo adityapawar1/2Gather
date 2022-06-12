@@ -6,6 +6,7 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@ericlathrop/phoenix-js-react-hooks": "gitlab:ericlathrop/phoenix-js-react-hooks",
+    "@mui/icons-material": "^5.8.3",
     "@mui/material": "^5.8.3",
     "@mui/styled-engine-sc": "^5.8.0",
     "@react-google-maps/api": "^2.12.0",

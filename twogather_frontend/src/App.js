@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
 import UserContext from "./store";
 import { SocketProvider } from "./SocketContext";
+import Event from "./components/Events/Event";
 
 function App() {
   const socketUrl = "ws://localhost:4000/socket";
@@ -29,6 +30,7 @@ function App() {
         </SocketProvider>
         {/* <Router> */}
         {/* <NavBar/> */}
+        {/* <Signup /> */}
         {/* <Routes> */}
         {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}

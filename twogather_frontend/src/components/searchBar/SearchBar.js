@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import "./searchbar.css";
-import TagsInput from "../tags/TagsInput";
+import TagsInput from "../tags/TagsInput.js";
 import searchIcon from "../../assets/search_icon.svg";
 
 function SearchBar() {

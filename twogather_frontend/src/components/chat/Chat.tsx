@@ -51,13 +51,13 @@ export default function Chat({ event_id }: ChatProps) {
   const [messages, setMessages] = useState<Message[]>(testMessages);
   const { user_name, jwt_token }: UserContextType = useContext(UserContext);
 
-  // const { channel: chatChannel }: any = useChannel(
-  //   "event:" + event_id,
-  //   { token: jwt_token },
-  //   (channel, { messages: initialMessages }) => {
-  //     setMessages(initialMessages);
-  //   }
-  // );
+  const { channel: chatChannel }: any = useChannel(
+    "event:" + event_id,
+    { token: jwt_token },
+    (channel, { messages: initialMessages }) => {
+      setMessages(initialMessages);
+    }
+  );
 
   // useEventHandler(chatChannel, "new_msg", (message) => {
   //   console.log("new message", message);

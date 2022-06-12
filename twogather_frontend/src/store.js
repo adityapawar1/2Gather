@@ -5,6 +5,8 @@ const initialValue = {
   user_email: null,
   user_id: null,
   jwt_token: null,
+  user_tags: null,
+  user_events: null,
 };
 
 const UserContext = React.createContext(initialValue);

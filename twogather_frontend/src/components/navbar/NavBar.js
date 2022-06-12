@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-// import Modals from '/Users/roshanb/Documents/GitHub/2Gather/twogather_frontend/src/components/Modal/Modal.js';
+import Modals from '../../components/Modal/Modal.js';
 import {
   Navbar,
   Container,

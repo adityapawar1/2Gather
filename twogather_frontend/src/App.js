@@ -46,14 +46,24 @@ function App() {
       <div className="App">
         {/* <SocketProvider url={socketUrl} options={socketOptions}> */}
           {/* <Router> */}
+<<<<<<< HEAD
           {/* <NavBar/> */}
           {/* <SignUp/> */}
           {/* <Login /> */}
+=======
+          <NavBar/>
+          {/* <Login/> */}
+          {/* <Signup /> */}
+>>>>>>> f6d22c991fbd2fe85eca0d93d07038142a04bea8
           {/* <Routes> */}
           {/* <Route exact path="/home" element={<Home/>} />
           <Route exact path="/profile" element={<Events/>} /> */}
         {/* <Home/> */}
+<<<<<<< HEAD
           <Results/>
+=======
+        <Events/>
+>>>>>>> f6d22c991fbd2fe85eca0d93d07038142a04bea8
       </div>
     </UserProvider>
   );

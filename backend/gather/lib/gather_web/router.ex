@@ -9,12 +9,6 @@ defmodule GatherWeb.Router do
     plug GatherWeb.Plugs.AuthPlug
   end
 
-
-  scope "/api", GatherWeb do
-    pipe_through :api
-
-  end
-
   scope "/api/user", GatherWeb do
     pipe_through :api
 
@@ -24,6 +18,7 @@ defmodule GatherWeb.Router do
   end
 
   scope "/api/user", GatherWeb do
+    pipe_through :api
     pipe_through :authenticated
 
     post "/edit", UserController, :edit_tags
@@ -34,6 +29,7 @@ defmodule GatherWeb.Router do
     pipe_through :authenticated
 
     resources "/event", EventController, except: [:update, :delete, :edit, :new]
+    get "/event/:id/chat", EventChatController, :past_messages
     get "/event/tag/contains/any", EventController, :contains_any_tag
     get "/event/tag/contains/all", EventController, :contains_all_tags
   end

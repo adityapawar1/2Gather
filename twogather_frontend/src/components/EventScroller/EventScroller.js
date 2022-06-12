@@ -2,13 +2,13 @@ import React from 'react';
 import './EventScroller.css';
 import events from './events.json';
 
-let bgColorList = ['gray', 'red', 'blue']
+let bgColorList = ['03045e', '0077b6', '00b4d8', '90e0ef','ca40f8']
 function Event(props) {
   return (
     <>
       
       <a href="#">
-          <button className={`EC${props.value}`} id={`event${props.value}`} onClick={props.onClick}>
+          <button className={`EC${props.color}`} id={`event${props.value}`} onClick={props.onClick}>
             <span>
                       
                           <div className="Event_name">{props.title}</div>

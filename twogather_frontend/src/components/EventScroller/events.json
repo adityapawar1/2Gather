@@ -94,6 +94,25 @@
                 "start": "June 05 2022, 12PM PST"
             },
             "title": "Soccer"
+        },
+        {
+            "description": "Come play Soccer with everyone",
+            "location": {
+                "address": "123 Vivvy Avenue",
+                "lat": "1213",
+                "lng": "1242"
+            },
+            "organizer": "neew@gmai2l.com",
+            "participants": [],
+            "tags": [
+                "soccer",
+                "sports"
+            ],
+            "time": {
+                "end": "June 06 2022, 12PM PST",
+                "start": "June 05 2022, 12PM PST"
+            },
+            "title": "Soccer"
         }
     ]
 }

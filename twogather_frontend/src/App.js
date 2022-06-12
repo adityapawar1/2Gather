@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -10,28 +10,41 @@ import Signup from "./pages/signup/Signup.js";
 import Events from "./pages/events/Events.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
-import {UserProvider} from "./UserContext";
+import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
+import { UserProvider } from "./UserContext";
 // import { SocketProvider } from "./SocketContext";
 import Event from "./components/Events/Event";
-import EventList from './components/Events/EventList';
+import EventList from "./components/Events/EventList";
 
 function App() {
   const socketUrl = "ws://localhost:4000/socket";
-  const socketOptions = { params: { token: "" } };
+  const socketOptions = {
+    // logger: (kind, msg, data) => {
+    //   console.log(`${kind}: ${msg}`, data);
+    // },
+    params: { token: "dasdsadasdasdasd" },
+  };
 
   return (
-    <UserProvider>
+    <UserProvider
+      value={{
+        user_name: "Some Person",
+        user_email: "test@gmail.com",
+        user_id: 5,
+      }}
+    >
       <div className="App">
-          {/* <SocketProvider url={socketUrl} options={socketOptions}>
-            <Chat event_id={"dasjkldja"}></Chat>
-          </SocketProvider> */}
+        {/* <SocketProvider url={socketUrl} options={socketOptions}> */}
+          {/* <Router> */}
+          {/* <NavBar/> */}
+          {/* <Signup /> */}
+          {/* <Routes> */}
           {/* <Route exact path="/home" element={<Home/>} />
           <Route exact path="/profile" element={<Events/>} /> */}
           <EventList/>
           {/* <Events/> */}
       </div>
     </UserProvider>
-
   );
 }
 

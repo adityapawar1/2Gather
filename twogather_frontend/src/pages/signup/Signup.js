@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./signup.css";
 // eslint-disable-next-line
-import Tags from "../../components/Tags/Tags";
+import Tags from "../../components/SignupTags/Tags";
 import {SubmitSignupLink} from './SignupElement'
 // git pls
 class Signup extends React.Component {
@@ -158,7 +158,7 @@ class Signup extends React.Component {
             <br></br>
             <label className="error">{this.state.phoneStatus}</label>
           </div>
-          <div>
+          <div className="interests">
             <label htmlFor="tags" class="labelSignup">
               My Interests
             </label>

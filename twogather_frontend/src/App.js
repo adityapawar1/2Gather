@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./pages/home/Home.js";
+import Home from "./pages/home/Home.tsx";
 import Profile from "./pages/profile/Profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
@@ -14,8 +14,8 @@ import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
 import { UserProvider } from "./UserContext";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import { SocketProvider } from "./SocketContext";
-import Event from "./components/Events/Event";
-import EventList from "./components/Events/EventList";
+import Event from "./components/Events/Event.tsx";
+import EventList from "./components/Events/EventList.tsx";
 import { Link } from "react-router-dom";
 
 function RouterButton({ link }) {
@@ -47,7 +47,7 @@ function App() {
         {/* <Routes> */}
         {/* <Route exact path="/home" element={<Home/>} />
           <Route exact path="/profile" element={<Events/>} /> */}
-        {/* <Home/> */}
+        <Home />
         {/* <Events/> */}
       </div>
     </UserProvider>

@@ -7,6 +7,8 @@ import Profile from "./pages/profile/profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
 import Signup from "./pages/signup/Signup.js";
+import Login from "./pages/signup/Login.js";
+
 import Events from "./pages/events/Events.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
@@ -41,11 +43,12 @@ function App() {
     >
       <div className="App">
         {/* <SocketProvider url={socketUrl} options={socketOptions}> */}
-        {/* <Router> */}
-        <NavBar />
-        {/* <Signup /> */}
-        {/* <Routes> */}
-        {/* <Route exact path="/home" element={<Home/>} />
+          {/* <Router> */}
+          {/* <NavBar/> */}
+          {/* <Login/> */}
+          <Signup />
+          {/* <Routes> */}
+          {/* <Route exact path="/home" element={<Home/>} />
           <Route exact path="/profile" element={<Events/>} /> */}
         {/* <Home/> */}
         {/* <Events/> */}

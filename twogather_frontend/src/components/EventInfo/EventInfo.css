@@ -18,7 +18,7 @@
     font-size: 20px;
     position: absolute;
     left: 50px;
-    top: 90px;
+    top: 100px;
 
 }
 .map{
@@ -55,4 +55,42 @@
   
 .tabs{
     margin-top: 10px;
+
+}
+
+.tagName{
+    font-family: 'Radio Canada';
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    margin-left: -85%;
+    
+}
+
+.tags{
+    position:fixed;
+    left: 30px;
+    padding-top: 10px;
+    
+}
+.desc{
+    margin-top: 110px;
+    display: block;
+    margin-left: -1.5%;
+
+}
+.descName{
+    font-family: 'Radio Canada';
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    margin-left: -85%;
+}
+.descInfo{
+    font-family: 'Radio Canada';
+    font-size: 15px;
+    position: relative;
+    margin-left: 1%;
+    text-align: left;
+    color: #757575;
 }

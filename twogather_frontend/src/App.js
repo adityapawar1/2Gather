@@ -26,6 +26,21 @@ function App() {
   };
 
   return (
+<<<<<<< HEAD
+    <UserProvider>
+      <div className="App">
+          {/* <SocketProvider url={socketUrl} options={socketOptions}>
+            <Chat event_id={"dasjkldja"}></Chat>
+          </SocketProvider> */}
+          {/* <Route exact path="/home" element={<Home/>} />
+          <Route exact path="/profile" element={<Events/>} /> */}
+          {/* <EventList/> */}
+          {/* <Signup /> */}
+          {/* <Events/> */}
+      </div>
+    </UserProvider>
+
+=======
     <div className="App">
       <UserProvider
         value={{
@@ -49,6 +64,7 @@ function App() {
         </SocketProvider>
       </UserProvider>
     </div>
+>>>>>>> 1018e3da469bf6ed9eb87498bb8bf6f0680d5df5
   );
 }
 

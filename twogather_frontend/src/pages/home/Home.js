@@ -1,4 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
+import Modal from '../../'
 import {UserContext} from '../../UserContext';
 import EventList from '../../components/Events/EventList';
 import "./home.css";

@@ -27,20 +27,21 @@ class EventScroller extends React.Component {
   
   constructor(props) {
       super(props)
+      this.handleClick = this.handleClick.bind(this);
       this.state = {
           eventJson: events.events
       }
   }
 
   createEvent = (item, i) => {
-      console.log(item, i);
+      // console.log(item, i);
       
       return <Event value={i} onClick={this.handleClick} title={item.title} time={item.time['start']} address={item.location["address"]} tags={item.tags.join(", ")} color={bgColorList[i % bgColorList.length]} />
   }
 
   handleClick = (event) => {
-      console.log(event.target.id)
-      console.log(document.getElementById(`Event${event.target.id}`));
+      console.log(event.currentTarget.id)
+      
   }
 
   render() {

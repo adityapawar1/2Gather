@@ -3,21 +3,37 @@ import './EventInfo.css';
 import Home from '../eventMap/EventMap';
 import EventInfoTabs from '../eventInfoTabs/EventInfoTabs';
 import Tags from '../UneditableTags/Tags';
+import events from './events.json';
 
 class EventInfo extends React.Component {
     constructor(props) {
         super(props);
-    
+        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            eventJson: events.events,
+            event_id: 4,
+            text: "Register"
+        }
+        
     }
+
+    handleClick = (event) => {
+       event.target.style.backgroundColor = "#3fd963";
+    }
+    changeText = (text) => {
+
+        this.setState({ text }); 
+      } 
+    
     
     render() {
-        
+        const {text} = this.state
         return (
             <div>
                 <div id="top">
-                    <div id="name">Bowling with Vivek</div>
-                    <div id="host">Created by vivek.nadig@warriorlife.net</div>
-                    <button className="button" id="register">Register</button>
+                    <div id="name">{this.state.eventJson[this.state.event_id].title}</div>
+                    <div id="host">Organized by: {this.state.eventJson[this.state.event_id].organizer}</div>
+                    <button onClick={ (event) => {this.changeText("Registered!"); this.handleClick(event);} } className="button" id="register">{text}</button>
                 </div>
                 <div id="map" className="map">
                  <Home/>
@@ -36,7 +52,8 @@ class EventInfo extends React.Component {
                     <div className="desc">
                         <div className="descName">Description</div>
                        <p className="descInfo">
-                       Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but al
+                       {this.state.eventJson[this.state.event_id].description}
+                       
                        </p>
                     </div>
                   

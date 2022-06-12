@@ -64,13 +64,13 @@
     font-size: 25px;
     font-weight: bold;
     position: relative;
-    margin-left: -85%;
+    margin-left: -45%;
     
 }
 
 .tags{
     position:fixed;
-    left: 55px;
+    left: 65px;
     padding-top: 10px;
     
 }
@@ -91,7 +91,7 @@
     font-family: 'Radio Canada';
     font-size: 15px;
     position: relative;
-    margin-left: 1%;
+    margin-left: 0.5%;
     text-align: left;
     color: #757575;
 }

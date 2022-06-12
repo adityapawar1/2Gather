@@ -1,6 +1,6 @@
 import { Children, useState } from "react";
 
-function TagsInput(props,{ children }) {
+function TagsInput({ children }) {
   const [tags, setTags] = useState([]);
 
   
@@ -10,12 +10,12 @@ function TagsInput(props,{ children }) {
     const value = e.target.value;
     if (!value.trim()) return;
     setTags([...tags, value]);
-    props.tagger(value);
+    children.tagger(value);
     e.target.value = "";
   }
 
   function removeTag(index) {
-    props.rtagger(index);
+    children.rtagger(index);
     setTags(tags.filter((el, i) => i !== index));
   }
 

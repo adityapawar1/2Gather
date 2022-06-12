@@ -1,7 +1,7 @@
 import React from 'react';
 import './EventInfo.css';
 import Home from '../eventMap/EventMap';
-
+import EventInfoTabs from '../eventInfoTabs/EventInfoTabs';
 
 class EventInfo extends React.Component {
     constructor(props) {
@@ -24,12 +24,7 @@ class EventInfo extends React.Component {
                 </div>
                 <div id = "bottom">
                     <div className="tabs">
-                    <div class="row">
-                            <div class="column">a</div>
-                            <div class="column">b</div>
-                            <div class="column">c</div>
-                            <div class="column">d</div>
-                    </div>
+                        <EventInfoTabs/>
                     </div>
                   
                 </div>

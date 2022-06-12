@@ -33,10 +33,11 @@
     border: none;
     outline: none;
     position: absolute;
-    right: 45%;
+    right: 44%;
+    border-radius: 5px;
 }
 .button{
-    background-image: linear-gradient(to right, rgb(59, 130, 246), rgb(37, 99, 235));
+    background-image: linear-gradient(to right, rgb(56, 189, 248), rgb(59, 130, 246));
   border: none;
   color: white;
   padding: 15px 32px;
@@ -44,8 +45,14 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-weight: bold;
+  font-family: 'Radio Canada';
   margin-right: -12%;
   width: 150px;
-  border-radius: 5px;
   margin-top: 5px;
+}
+
+  
+.tabs{
+    margin-top: 10px;
 }

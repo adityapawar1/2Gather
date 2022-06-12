@@ -7,6 +7,8 @@ defmodule Gather.Signer do
     Gather.JWTToken.generate_and_sign!(%{"id" => id, "iss" => "2gather-auth"}, signer)
   end
 
+  def validate(nil), do: {:error, %{}}
+
   def validate(token) do
     signer = Joken.Signer.create("HS256", Application.fetch_env!(:gather, :secret))
     Gather.JWTToken.verify_and_validate(token, signer)

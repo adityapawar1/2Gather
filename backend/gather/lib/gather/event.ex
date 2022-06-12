@@ -10,6 +10,7 @@ defmodule Gather.Event do
     field :time, :map
     field :title, :string
     field :tags, {:array, :string}
+    field :chat, {:array, :map}
 
     timestamps()
   end
@@ -66,6 +67,25 @@ defmodule Gather.Event.Location do
               )
     def encode(%Gather.Event.Location{} = value, opts) do
       Jason.Encode.map(Map.take(value, [:lat, :lng, :address]), opts)
+    end
+  end
+end
+
+
+defmodule Gather.Event.ChatMessage do
+  @enforce_keys [:sender, :message]
+  defstruct [:sender, :message]
+  use ExConstructor
+
+  defimpl Jason.Encoder, for: __MODULE__ do
+    @spec encode(%Gather.Event.ChatMessage{}, Jason.Encode.opts()) ::
+            binary
+            | maybe_improper_list(
+                binary | maybe_improper_list(any, binary | []) | byte,
+                binary | []
+              )
+    def encode(%Gather.Event.ChatMessage{} = value, opts) do
+      Jason.Encode.map(Map.take(value, [:sender, :message]), opts)
     end
   end
 end

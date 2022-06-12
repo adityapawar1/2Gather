@@ -1,7 +1,7 @@
 import React from 'react';
 import './EventInfo.css';
 import Home from '../eventMap/EventMap';
-
+import EventInfoTabs from '../eventInfoTabs/EventInfoTabs';
 
 class EventInfo extends React.Component {
     constructor(props) {
@@ -22,7 +22,12 @@ class EventInfo extends React.Component {
                  <Home/>
                 
                 </div>
-                <div id = "bottom">sdf</div>
+                <div id = "bottom">
+                    <div className="tabs">
+                        <EventInfoTabs/>
+                    </div>
+                  
+                </div>
             </div>
         );
     }

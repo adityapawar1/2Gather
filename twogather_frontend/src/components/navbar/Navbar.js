@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Navbar,
   Container,
@@ -13,7 +13,8 @@ import SearchBar from '../searchBar/SearchBar';
 import './navbar.css';
 import logo from '../../assets/logo_75.png';
 
-function NavBar(){
+// git pls
+function NavBar() {
   return (
     <Navbar>
       <Container>

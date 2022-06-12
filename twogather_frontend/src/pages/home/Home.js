@@ -10,13 +10,6 @@ const Home = () => {
   const [data, setData] = useContext(UserContext);
 
   return (
-<<<<<<< HEAD
-    <div>
-      <button onClick={}>
-
-      </button>
-    </div>
-=======
     <>
       <div className="greeting-header m-4">
         Welcome [user]
@@ -36,7 +29,6 @@ const Home = () => {
         </div>
       </div>
     </>
->>>>>>> c36f23d84798decbdf3e5ab4592b6ccc864e7a75
   )
 }
 

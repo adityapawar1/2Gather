@@ -2,8 +2,13 @@ import React from "react";
 import axios from "axios";
 import "./signup.css";
 // eslint-disable-next-line
+<<<<<<< HEAD
 import Tags from "../../components/Tags/Tags";
 import {SubmitSignupLink} from './SignupElement'
+=======
+import Tags from "../../components/tags/Tags";
+
+>>>>>>> 88c287304f576ca6ba3dfd35f49b87fb818e6746
 // git pls
 class Signup extends React.Component {
   constructor(props) {

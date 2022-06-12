@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./pages/home/Home.js";
-import Profile from "./pages/profile/profile.js";
+import Profile from "./pages/profile/Profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
 import Signup from "./pages/signup/Signup.js";
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       {/* <UserContext.Provider
         value={{
-          user_name: "test1",
+          user_name: "Some Person",
           user_email: "test@gmail.com",
           user_id: 5,
         }}

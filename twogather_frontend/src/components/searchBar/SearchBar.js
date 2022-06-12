@@ -1,30 +1,23 @@
 import { React, useState } from "react";
-import TextField from "@mui/material/TextField";
-// import List from "./List";
 import "./searchbar.css";
-import TagsInput from "../Tags/TagsInput";
+import TagsInput from "../tags/TagsInput";
+import searchIcon from "../../assets/search_icon.svg";
 
 function SearchBar() {
-  const [inputText, setInputText] = useState("");
-  let inputHandler = (e) => {
-    //convert input text to lower case
-    var lowerCase = e.target.value.toLowerCase();
-    setInputText(lowerCase);
-  };
-
+  //We can add the list later and just say we didn't find any for the categories that don't exist
   return (
-    <div className="main">
-      {/* <div className="search">
-        <TextField
-          id="outlined-basic"
-          onChange={inputHandler}
-          variant="outlined"
-          fullWidth
-          label="Search"
-        />
-      </div> */}
-      <TagsInput />
-      {/* <List input={inputText} /> */}
+    <div className="w-1/2 border-black border-1 flex flex-row m-5 rounded-[5px]">
+      <div className="w-full justify-end">
+        <TagsInput>
+          <img
+            className="m-2"
+            alt="search icon"
+            src={searchIcon}
+            width="25"
+            height="25"
+          />
+        </TagsInput>
+      </div>
     </div>
   );
 }

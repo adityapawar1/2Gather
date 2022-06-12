@@ -24,23 +24,23 @@ const testMessages: Message[] = [
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
   },
   {
-    sender: "First Last",
+    sender: "Some Person",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
   },
   { sender: "First Last", body: "yooooooo" },
   { sender: "First Last", body: "Im so excited" },
   {
-    sender: "First Last",
+    sender: "Some Person",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
   },
   { sender: "First Last", body: "Ill be there" },
-  { sender: "First Last", body: "Got it" },
+  { sender: "Some Person", body: "Got it" },
   {
     sender: "First Last",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
   },
   { sender: "First Last", body: "hello there" },
-  { sender: "First Last", body: "i will not be there" },
+  { sender: "Some Person", body: "i will not be there" },
 ];
 
 export default function Chat({ event_id }: ChatProps) {
@@ -49,16 +49,23 @@ export default function Chat({ event_id }: ChatProps) {
     useContext(UserContext);
 
   return (
-    <div className="flex flex-col w-1/6 h-1/3 m-auto overflow-auto">
-      {messages.map((message: Message): ReactNode => {
-        return (
-          <ChatMessage
-            user={message.sender}
-            body={message.body}
-            sentByCurrentUser={user_name == message.sender}
-          />
-        );
-      })}
+    <div className="w-1/5 m-auto my-2">
+      <div className="flex flex-col overflow-auto h-screen">
+        {messages.map((message: Message): ReactNode => {
+          return (
+            <ChatMessage
+              user={message.sender}
+              body={message.body}
+              sentByCurrentUser={user_name == message.sender}
+            />
+          );
+        })}
+      </div>
+      <input
+        className="w-full text-left mt-1"
+        type="text"
+        placeholder="Type a message..."
+      />
     </div>
   );
 }

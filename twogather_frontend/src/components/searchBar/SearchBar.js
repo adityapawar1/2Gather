@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import TextField from "@mui/material/TextField";
 // import List from "./List";
 import "./searchbar.css";
-import TagsInput from '../tags/TagsInput'
+import TagsInput from "../tags/TagsInput";
 
 function SearchBar() {
   const [inputText, setInputText] = useState("");
@@ -23,7 +23,7 @@ function SearchBar() {
           label="Search"
         />
       </div> */}
-      <TagsInput/>
+      <TagsInput />
       {/* <List input={inputText} /> */}
     </div>
   );

@@ -4,9 +4,7 @@
     display: block;
 }
 #map{
-    width:100%;
-    height:250px;
-    background-color: blue;
+    
 }
 #name{
     font-weight:bold;
@@ -22,6 +20,11 @@
     left: 50px;
     top: 125px;
 
+}
+.map{
+    width:100%;
+    height:250px;
+    background-color: blue;
 }
 
 #register{

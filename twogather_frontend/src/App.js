@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
 import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
 import { UserProvider } from "./UserContext";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import { SocketProvider } from "./SocketContext";
 import Event from "./components/Events/Event";
 import EventList from "./components/Events/EventList";
@@ -26,29 +27,25 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {/* <UserContext.Provider
-        value={{
-          user_name: "Some Person",
-          user_email: "test@gmail.com",
-          user_id: 5,
-        }}
-      >
-        <SocketProvider url={socketUrl} options={socketOptions}>
-          <Chat event_id={"dasjkldja"}></Chat>
-        {/* <Router> */}
-        {/* <NavBar/> */}
-        {/* <Signup /> */}
-        {/* <Routes> */}
-        {/* <Route exact path="/home" element={<Home/>} />
-        <Route exact path="/profile" element={<Events/>} /> */}
-        <Events />
-        {/* </Routes>
-    </Router> */}
-        {/* <SearchBar /> */}
-        {/* </SocketProvider> */}
-      {/* </UserContext.Provider> */}
-    </div>
+    <UserProvider
+      value={{
+        user_name: "Some Person",
+        user_email: "test@gmail.com",
+        user_id: 5,
+      }}
+    >
+      <div className="App">
+        {/* <SocketProvider url={socketUrl} options={socketOptions}> */}
+          {/* <Router> */}
+          {/* <NavBar/> */}
+          {/* <Signup /> */}
+          {/* <Routes> */}
+          {/* <Route exact path="/home" element={<Home/>} />
+          <Route exact path="/profile" element={<Events/>} /> */}
+          <Home/>
+          {/* <Events/> */}
+      </div>
+    </UserProvider>
   );
 }
 

@@ -16,10 +16,12 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-
-
 .event:hover{
     transform: scale(1.025);
+}
+
+.event-card{
+    display: inline-block;
 }
 
 .event-banner{
@@ -32,4 +34,38 @@
 
 .event-title{
     font-weight: 700;
+}
+
+.event-list{
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    height: 400px;
+
+}
+
+.event-list::-webkit-scrollbar{
+    display: none;
+}
+
+.slide-bar {
+    width: 100px;
+    height: 50px;
+    background-color:white;
+    border-radius: 50px;
+    padding-top: 10px;
+    border: 2px solid #EEEEED;
+    float: right;
+}
+
+.list-header > *{
+    display: inline-block;
+}
+
+.tag-title{
+    float: left;
+    font-size: 1.5em;
+    font-weight: 450;
 }

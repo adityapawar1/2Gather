@@ -10,11 +10,12 @@ function TagsInput({ children }) {
     const value = e.target.value;
     if (!value.trim()) return;
     setTags([...tags, value]);
+    children.tagger(value);
     e.target.value = "";
-    
   }
 
   function removeTag(index) {
+    children.rtagger(index);
     setTags(tags.filter((el, i) => i !== index));
   }
 

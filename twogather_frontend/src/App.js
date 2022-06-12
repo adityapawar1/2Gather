@@ -19,11 +19,8 @@ function App() {
   const socketUrl = "ws://localhost:4000/socket";
   const socketOptions = { params: { token: "" } };
 
-  // user data
-  const [data, setData] = useState({});
-
   return (
-    <UserProvider value={data}>
+    <UserProvider>
       <div className="App">
           {/* <SocketProvider url={socketUrl} options={socketOptions}>
             <Chat event_id={"dasjkldja"}></Chat>

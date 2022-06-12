@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from 'react';
 import {UserContext} from '../../UserContext';
 
 const Home = () => {
-  //user data, s
+  //user data, still have to add api though
   const [data, setData] = useContext(UserContext);
 
   return (

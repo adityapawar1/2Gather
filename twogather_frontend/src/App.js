@@ -13,24 +13,25 @@ import UserContext from "./store";
 function App() {
   return (
     <div className="App">
-      <UserContext.Provider
+      {/* <UserContext.Provider
         value={{
           user_name: "test1",
           user_email: "test@gmail.com",
           user_id: 5,
         }}
-      >
-        <Chat event_id={"dasjkldja"}></Chat>
+      > */}
+        {/* <Chat event_id={"dasjkldja"}></Chat> */}
         {/* <Router> */}
         {/* <NavBar/> */}
+        <Signup />
         {/* <Routes> */}
         {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}
         {/* <Events /> */}
         {/* </Routes>
     </Router> */}
-        <SearchBar />
-      </UserContext.Provider>
+        {/* <SearchBar /> */}
+      {/* </UserContext.Provider> */}
     </div>
   );
 }

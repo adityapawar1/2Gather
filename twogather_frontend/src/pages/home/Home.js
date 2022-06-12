@@ -1,4 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
+import Modal from '../../'
 import {UserContext} from '../../UserContext';
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
 
   return (
     <div>
-      <button>
+      <button onClick={}>
 
       </button>
     </div>

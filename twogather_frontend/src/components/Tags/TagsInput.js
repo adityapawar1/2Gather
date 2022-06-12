@@ -1,6 +1,6 @@
 import { Children, useState } from "react";
 
-function TagsInput({ children }) {
+function TagsInput(props,{ children }) {
   const [tags, setTags] = useState([]);
 
   

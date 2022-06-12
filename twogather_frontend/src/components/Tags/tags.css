@@ -1,40 +1,42 @@
-
 /* maybe make background color be a random color */
-.tag-item{
-    background-color: rgb(218, 216, 216);
-    display: inline-block;
-    padding: .5em .75em;
-    border-radius: 20px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tag-item {
+  background-color: rgb(218, 216, 216);
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  border-radius: 20px;
 }
-.tag-item .close{
-    height: 20px;
-    width: 20px;
-    color: black;
-    /* background-color: black; */
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: .35em;
-    margin-top: .15em;
-    font-size: 15px;
-    cursor: pointer;
+.tag-item .close {
+  height: 20px;
+  width: 20px;
+  color: black;
+  /* background-color: black; */
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.35em;
+  margin-top: 0.15em;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-.tags-input{
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    background-color: white;
-    text-align: left;
-
+.tags-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background-color: white;
+  text-align: left;
 }
-.tags-input::placeholder{
-    font-family: 'Radio Canada';
-    font-size: 15px;
-    color: #B5B7BA
+.tags-input::placeholder {
+  font-family: "Radio Canada";
+  font-size: 15px;
+  color: #b5b7ba;
 }
 
 .flex-container {
-    display: flex;
+  display: flex;
 }

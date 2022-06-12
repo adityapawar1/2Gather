@@ -20,7 +20,7 @@ function App() {
           user_id: 5,
         }}
       >
-        <Chat event_id={"dasjkldja"}></Chat>
+        {/* <Chat event_id={"dasjkldja"}></Chat> */}
         {/* <Router> */}
         {/* <NavBar/> */}
         {/* <Routes> */}
@@ -29,7 +29,7 @@ function App() {
         {/* <Events /> */}
         {/* </Routes>
     </Router> */}
-        {/* <SearchBar /> */}
+        <SearchBar />
       </UserContext.Provider>
     </div>
   );

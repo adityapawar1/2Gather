@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -10,10 +10,11 @@ import Signup from "./pages/signup/Signup.js";
 import Events from "./pages/events/Events.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
-import {UserProvider} from "./UserContext";
+import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
+import { UserProvider } from "./UserContext";
 // import { SocketProvider } from "./SocketContext";
 import Event from "./components/Events/Event";
-import EventList from './components/Events/EventList';
+import EventList from "./components/Events/EventList";
 
 function App() {
   const socketUrl = "ws://localhost:4000/socket";
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <UserContext.Provider
+      {/* <UserContext.Provider
         value={{
           user_name: "Some Person",
           user_email: "test@gmail.com",
@@ -41,12 +42,12 @@ function App() {
         {/* <Routes> */}
         {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}
-        {/* <Events /> */}
+        <Events />
         {/* </Routes>
     </Router> */}
         {/* <SearchBar /> */}
-        </SocketProvider>
-      </UserContext.Provider>
+        {/* </SocketProvider> */}
+      {/* </UserContext.Provider> */}
     </div>
   );
 }

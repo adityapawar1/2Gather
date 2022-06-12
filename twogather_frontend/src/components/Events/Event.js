@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 import { Col, Row, Container } from "react-bootstrap";
 
-function Event(){
+function Event(props){
   
   const [amount, setAmount] = useState(1);
   const [title, setTitle] = useState(1);
@@ -12,7 +12,7 @@ function Event(){
     <div>
       <div className="event-banner"></div>
       <div className="text-left">
-        {/* <div>
+        <div>
           Event Title
         </div>
         <div>
@@ -20,7 +20,7 @@ function Event(){
         </div>
         <div>
           5 Participants
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -8,4 +8,4 @@
 
 .message-by-other {
   @apply bg-gray-300 rounded-tl-none text-black justify-start;
-}
+} */

@@ -10,16 +10,27 @@ import Signup from "./pages/signup/Signup.js";
 import Events from "./pages/events/Events.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
+<<<<<<< HEAD
+import UserContext from "./store";
+import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
+=======
 import {UserProvider} from "./UserContext";
 // import { SocketProvider } from "./SocketContext";
+>>>>>>> 0c2b3f31b25cc2553d2b112e9ef2c460f1cc0925
 import Event from "./components/Events/Event";
 import EventList from './components/Events/EventList';
 
 function App() {
   const socketUrl = "ws://localhost:4000/socket";
-  const socketOptions = { params: { token: "" } };
+  const socketOptions = {
+    // logger: (kind, msg, data) => {
+    //   console.log(`${kind}: ${msg}`, data);
+    // },
+    params: { token: "dasdsadasdasdasd" },
+  };
 
   return (
+<<<<<<< HEAD
     <UserProvider>
       <div className="App">
           {/* <SocketProvider url={socketUrl} options={socketOptions}>
@@ -33,6 +44,31 @@ function App() {
       </div>
     </UserProvider>
 
+=======
+    <div className="App">
+      <UserContext.Provider
+        value={{
+          user_name: "Some Person",
+          user_email: "test@gmail.com",
+          user_id: 5,
+        }}
+      >
+        <SocketProvider url={socketUrl} options={socketOptions}>
+          <Chat event_id={"dasjkldja"}></Chat>
+        {/* <Router> */}
+        {/* <NavBar/> */}
+        {/* <Signup /> */}
+        {/* <Routes> */}
+        {/* <Route exact path="/home" element={<Home/>} />
+        <Route exact path="/profile" element={<Events/>} /> */}
+        {/* <Events /> */}
+        {/* </Routes>
+    </Router> */}
+        {/* <SearchBar /> */}
+        </SocketProvider>
+      </UserContext.Provider>
+    </div>
+>>>>>>> 1018e3da469bf6ed9eb87498bb8bf6f0680d5df5
   );
 }
 

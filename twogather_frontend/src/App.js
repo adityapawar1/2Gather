@@ -4,6 +4,7 @@ import Home from './pages/home/home.js';
 import Profile from './pages/profile/profile.js';
 import Navbar from './components/navbar/index.js';
 import Signup from './pages/signup/signup.js';
+import Events from './pages/events/events.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/home" element={<Home/>} />
-        <Route exact path="/profile" element={<Signup/>} />
+        <Route exact path="/profile" element={<Events/>} />
         
       </Routes>
     </Router>

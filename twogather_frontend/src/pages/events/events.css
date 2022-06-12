@@ -1,0 +1,21 @@
+#wrapper {
+    
+
+}
+#div1 {
+    display: inline-block;
+    
+    width:65%;
+    height:600px;
+    margin-right: 60px;
+    border: 1px solid red;
+    background-color: rgb(134, 134, 134);
+}
+#div2 {
+    vertical-align:top;
+    display: inline-block;
+    width:25%;
+    height:600px;
+    background-color:black;
+    border: 1px solid green;
+}

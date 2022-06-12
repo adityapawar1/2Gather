@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Navbar,
   Container,
@@ -6,11 +6,12 @@ import {
   NavDropdown,
   Form,
   FormControl,
-  Button
-} from 'react-bootstrap';
-import './navbar.css';
+  Button,
+} from "react-bootstrap";
+import "./navbar.css";
 
-function NavBar(){
+// git pls
+function NavBar() {
   return (
     <Navbar>
       <Container>
@@ -21,8 +22,8 @@ function NavBar(){
             width="30"
             height="30"
             className="d-inline-block align-top"
-          />{' '}
-        React Bootstrap
+          />{" "}
+          React Bootstrap
         </Navbar.Brand>
       </Container>
     </Navbar>

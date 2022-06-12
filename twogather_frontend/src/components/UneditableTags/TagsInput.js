@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import events from './events.json';
 
 function TagsInput(){
-    const [tags, setTags] = useState(["LMAOO", "FRFR","TAG","VIVVY","VIRUS","robell","free"]);
+    const id = 4;
+    const [tags, setTags] = useState(events.events[id].tags);
 
     function handleKeyDown(e){
         if(e.key !== 'Enter') return

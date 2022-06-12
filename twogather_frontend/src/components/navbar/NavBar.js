@@ -12,18 +12,12 @@ import './navbar.css';
 import logo from '../../assets/logo_75.png';
 import profile from '../../assets/pfp.jpeg';
 
-
-
-
 // git pls
 function NavBar() {
   return (
       <Container fluid>
         <Row className="p-3">
-          {/* <div className="search-bar">
-                <SearchBar/>
-              </div> */}
-          <Col xs={8} className="text-left">
+          <Col xs={2} className="text-left">
             <Navbar.Brand>
                 <img
                   alt="Logo"
@@ -34,6 +28,9 @@ function NavBar() {
                 />{' '}
                 2Gather
             </Navbar.Brand>
+          </Col>
+          <Col xs={6}>
+            <SearchBar/>
           </Col>
           <Col xs={3}> 
             <Button className="create-gathering-btn">

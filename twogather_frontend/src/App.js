@@ -28,7 +28,8 @@ function App() {
           {/* <Route exact path="/home" element={<Home/>} />
           <Route exact path="/profile" element={<Events/>} /> */}
           {/* <EventList/> */}
-          <Events/>
+          {/* <Signup /> */}
+          {/* <Events/> */}
       </div>
     </UserProvider>
 

@@ -9,8 +9,12 @@ import Events from "./pages/events/Events.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from "./components/chat/Chat.tsx";
 import UserContext from "./store";
+import { SocketProvider } from "./SocketContext";
 
 function App() {
+  const socketUrl = "ws://localhost:4000/socket";
+  const socketOptions = { params: { token: "" } };
+
   return (
     <div className="App">
       <UserContext.Provider
@@ -20,7 +24,9 @@ function App() {
           user_id: 5,
         }}
       >
-        {/* <Chat event_id={"dasjkldja"}></Chat> */}
+        <SocketProvider url={socketUrl} options={socketOptions}>
+          <Chat event_id={"dasjkldja"}></Chat>
+        </SocketProvider>
         {/* <Router> */}
         {/* <NavBar/> */}
         {/* <Routes> */}
@@ -29,7 +35,7 @@ function App() {
         {/* <Events /> */}
         {/* </Routes>
     </Router> */}
-        <SearchBar />
+        {/* <SearchBar /> */}
       </UserContext.Provider>
     </div>
   );

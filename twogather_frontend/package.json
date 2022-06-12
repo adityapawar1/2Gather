@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@ericlathrop/phoenix-js-react-hooks": "gitlab:ericlathrop/phoenix-js-react-hooks",
     "@mui/material": "^5.8.3",
     "@mui/styled-engine-sc": "^5.8.0",
     "@react-google-maps/api": "^2.12.0",
@@ -20,6 +21,8 @@
     "emotion": "^11.0.0",
     "google-map-react": "^2.1.10",
     "mui": "^0.0.1",
+    "phoenix": "^1.6.10",
+    "phoenixjs": "^1.0.5",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",

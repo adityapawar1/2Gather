@@ -1,0 +1,128 @@
+r*{
+    box-sizing: border-box;
+}
+
+Form{
+    overflow: hidden;
+}
+
+.SignUpContainer{
+    /* margin: 1vw; */
+    /* padding: 0 !important; */
+    /* width: 100%;
+    height: 100%; */
+
+}
+.LoginForm, .SignUpForm{
+    padding: 15px;
+    background-color: white;
+    margin: 15vh auto;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
+}
+.LoginForm{
+    max-width: 500px;
+    max-height: 750px; 
+    min-width: 300px;
+    min-height: 600px;
+}
+
+.SignUpForm{
+    max-width: 500px;
+    max-height: 600px; 
+    min-width: 300px;
+    min-height: 600px;
+}
+/* Sign Up */
+/* .SignUpForm{
+    padding: 15px;
+    background-color: white;
+    margin: 15vh auto;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 750px; 
+    min-width: 300px;
+    min-height: 600px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */
+
+.SignUpForm h1{
+    font-weight: 600;
+}
+
+.SignUpForm .logo-text{
+    font-weight: 500;
+    font-size: 1.5em;
+    color: rgb(1,123,255);
+}
+
+.tosText{
+    display: block;
+    font-size: 13px;
+    margin-top: 1em;
+}
+
+.separateLine{
+    margin: 2rem 0.5rem 2rem 0.5rem;
+}
+
+.InfoForm{
+    background-color: white;
+    max-width: 850px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.form-control{
+    background-color: #f5f8fa!important;
+    border-color: #f5f8fa!important;
+    color: #5e6278!important;
+    transition: color .2s ease,background-color .2s ease;
+    box-shadow: none!important;
+
+}
+
+.form-control:focus{
+    background-color: #eef3f7!important;
+    border-color: #eef3f7!important;
+    color: #5e6278!important;
+    transition: color .2s ease,background-color .2s ease!important;
+}
+
+@media only screen and (max-width: 768px) {
+    .LoginForm, .SignUpForm {
+        margin: 0;
+        /* width: 100vw; */
+        height: 100vh;
+        max-width: none;
+        max-height: none; 
+        min-width: none;
+        max-height: none;
+        border: 0;
+        box-shadow: none;
+        border-radius: 0px;
+    }
+}
+
+/* @media only screen and (max-width: 768px) {
+
+    .SignUpForm {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        max-width: none;
+        max-height: none; 
+        min-width: none;
+        max-height: none;
+        border: 0;
+        box-shadow: none;
+        border-radius: 0px;
+    }
+  }  */

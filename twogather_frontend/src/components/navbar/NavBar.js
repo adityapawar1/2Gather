@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
+import Modals from '../../components/Modal/Modal.js';
 import {
   Navbar,
   Container,
   Row,
   Col,
-  Button
+  Button,
+  Modal,
 } from 'react-bootstrap';
 import SearchBar from '../searchBar/SearchBar';
 
@@ -14,8 +16,10 @@ import profile from '../../assets/pfp.jpeg';
 
 // git pls
 function NavBar() {
+  const [show, setShow] = useState(false);
   return (
       <Container fluid>
+        <Modal show={show}/>
         <Row className="p-3">
           <Col xs={2} className="text-left">
             <Navbar.Brand>
@@ -33,7 +37,7 @@ function NavBar() {
             <SearchBar/>
           </Col>
           <Col xs={3}> 
-            <Button className="create-gathering-btn">
+            <Button className="create-gathering-btn" onClick={()=>{setShow(true)}}>
                 Create Gathering
             </Button>
           </Col>

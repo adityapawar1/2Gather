@@ -17,6 +17,25 @@ function Modals(props){
     const handleClose2 = () =>{
         let w1 = (title!="" && description!="" && location!=""&& date!="" && startTime!="" && endTime!="");
         if (w1){
+            var obj = new Object();
+            obj.title=title;
+            obj.description=description;
+            obj.location={"lat":null,"long":null,"address":location};
+            obj.time={"start":date+" "+startTime,"end":date+" "+endTime};
+            var jsonString= JSON.stringify(obj);
+            var myHeaders = new Headers();
+            myHeaders.append("jwttoken", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQ5OTYwMzEsImlhdCI6MTY1NDk4ODgzMSwiaWQiOjMzLCJpc3MiOiIyZ2F0aGVyLWF1dGgiLCJqdGkiOiIycnJyNzRtajlza2pldjloZzAwMDAwOTMiLCJuYmYiOjE2NTQ5ODg4MzF9.LZvw8tPVI-fSCkBg4s0Zd6QJsVWDbVwwWoytmlQtq8");
+            var raw = jsonString;
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            fetch("http://localhost:4000/api/event", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
             setShow(false);
         }else{
             alert("Missing or Incorrect Information!");

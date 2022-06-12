@@ -1,40 +1,39 @@
 import { Children, useState } from "react";
 
-function TagsInput({ children }) {
+function TagsInput({ children }, props) {
   const [tags, setTags] = useState([]);
-
-  
 
   function handleKeyDown(e) {
     if (e.key !== "Enter") return;
     const value = e.target.value;
     if (!value.trim()) return;
     setTags([...tags, value]);
-    props.tagger(value);
+    // props.tagger(value);
     e.target.value = "";
   }
 
   function removeTag(index) {
-    props.rtagger(index);
+    // props.rtagger(index);
     setTags(tags.filter((el, i) => i !== index));
   }
 
   return (
-    <div className="p-2">
+    <div className="">
       <div className="flex flex-row gap-1">
         {children}
         {tags.map((tag, index) => (
           <div
-            className="bg-gray-200 rounded-xl w-fit p-2 overflow-auto"
+            className="tag-item m-1"
             key={index}
           >
-            <span onClick={() => removeTag(index)}>{tag} &times;</span>
+            <span>{tag}</span>
+            <span className="close" onClick={() => removeTag(index)}> &times;</span>
           </div>
         ))}
         <input
           onKeyDown={handleKeyDown}
           type="text"
-          className="w-1/6 justify-end overflow-auto flex-grow"
+          className="w-1/6 justify-end overflow-auto flex-grow outline-0"
           placeholder="Find Gatherings..."
         />
       </div>

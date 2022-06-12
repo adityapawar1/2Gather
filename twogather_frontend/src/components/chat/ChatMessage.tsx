@@ -10,9 +10,15 @@ export default function ChatMessage({
   sentByCurrentUser,
 }: ChatMessageProps) {
   return (
-    <div className="m-0">
+    <div
+      className={`m-0 ${sentByCurrentUser ? "justify-end" : "justify-start"}`}
+    >
       <p className="text-gray-500 m-0 mx-1 w-fit text-xs">{user}</p>
-      <p className="text-md bg-blue-600 text-white w-fit py-1 px-2 rounded-xl text-left rounded-bl-none">
+      <p
+        className={`text-md  w-fit py-1 px-2 rounded-xl text-left ${
+          sentByCurrentUser ? "message-by-user" : "message-by-other"
+        }`}
+      >
         {body}
       </p>
     </div>

@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.message-by-user {
+  @apply bg-blue-600 rounded-br-none text-white justify-end;
+}
+
+.message-by-other {
+  @apply bg-gray-300 rounded-tl-none text-black justify-start;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './signup.css';
 // eslint-disable-next-line
-import Tags from "../../components/tags/Tags";
+import Tags from "../../components/Tags/Tags";
 
 class Signup extends React.Component {
     constructor(props) {

@@ -1,35 +1,21 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import { useMemo } from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+export default function Home() {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyAJih_-oGhtoZv7M3V6Na1ollsM3eZE9-A",
+  });
 
-class SimpleMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
-    zoom: 11
-  };
-
-  render() {
-    return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: ''}}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
-          />
-        </GoogleMapReact>
-      </div>
-    );
-  }
+  if (!isLoaded) return <div>Loading...</div>;
+  return <Map />;
 }
 
-export default SimpleMap;
+function Map() {
+  const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
+
+  return (
+    <GoogleMap zoom={10} center={center} mapContainerClassName="map">
+      <Marker position={center} />
+    </GoogleMap>
+  );
+}

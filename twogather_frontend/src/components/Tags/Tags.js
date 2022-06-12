@@ -10,7 +10,7 @@ class Tags extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <TagsInput tagger={(ntag)=>{this.props.tagger(ntag)}} rtagger={(i)=>{this.props.rtagger(ntag)}}/>
+        <TagsInput tagger={(ntag)=>{this.props.tagger(ntag)}} rtagger={(i)=>{this.props.rtagger(i)}}/>
       </React.Fragment>
     );
   }

@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import Modals from '/Users/roshanb/Documents/GitHub/2Gather/twogather_frontend/src/components/Modal/Modal.js';
 import {
   Navbar,
   Container,
@@ -12,18 +13,14 @@ import './navbar.css';
 import logo from '../../assets/logo_75.png';
 import profile from '../../assets/pfp.jpeg';
 
-
-
-
 // git pls
 function NavBar() {
+  const [show, setShow] = useState(false);
   return (
       <Container fluid>
+        <Modals show={show}/>
         <Row className="p-3">
-          {/* <div className="search-bar">
-                <SearchBar/>
-              </div> */}
-          <Col xs={8} className="text-left">
+          <Col xs={2} className="text-left">
             <Navbar.Brand>
                 <img
                   alt="Logo"
@@ -35,8 +32,11 @@ function NavBar() {
                 2Gather
             </Navbar.Brand>
           </Col>
+          <Col xs={6}>
+            <SearchBar/>
+          </Col>
           <Col xs={3}> 
-            <Button className="create-gathering-btn">
+            <Button className="create-gathering-btn" onClick={()=>{setShow(true)}}>
                 Create Gathering
             </Button>
           </Col>

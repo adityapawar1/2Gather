@@ -27,7 +27,8 @@ function App() {
           </SocketProvider> */}
           {/* <Route exact path="/home" element={<Home/>} />
           <Route exact path="/profile" element={<Events/>} /> */}
-          <EventList/>
+          {/* <EventList/> */}
+          <Events/>
       </div>
     </UserProvider>
 

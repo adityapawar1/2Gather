@@ -3,8 +3,11 @@ import UserContext from "../../store";
 import "./Chat.css";
 import { Socket } from "phoenixjs";
 import ChatMessage from "./ChatMessage.tsx";
-import { useEventHandler } from "@ericlathrop/phoenix-js-react-hooks";
-import { SocketContext } from "../../SocketContext";
+import {
+  sendMessage,
+  useChannel,
+  useEventHandler,
+} from "@ericlathrop/phoenix-js-react-hooks";
 
 type ChatProps = {
   event_id: number | null;
@@ -51,14 +54,11 @@ export default function Chat({ event_id }: ChatProps) {
   const [messages, setMessages] = useState<Message[]>(testMessages);
   const { user_name, jwt_token }: UserContextType = useContext(UserContext);
 
-  const { channel: chatChannel }: any = useChannel(
+  const channel: any = useChannel(
     "event:" + event_id,
     { token: jwt_token },
-    (channel, { messages: initialMessages }) => {
-      setMessages(initialMessages);
-    }
+    (x, y) => {}
   );
-
   // useEventHandler(chatChannel, "new_msg", (message) => {
   //   console.log("new message", message);
   //   setMessages(messages.slice(0).concat([message]));
@@ -67,11 +67,12 @@ export default function Chat({ event_id }: ChatProps) {
   return (
     <div className="w-1/5 m-auto my-2">
       <div className="flex flex-col overflow-auto h-screen">
-        {messages.map((message: Message): ReactNode => {
+        {messages.map((message: Message, index: number): ReactNode => {
           return (
             <ChatMessage
               user={message.sender}
               body={message.body}
+              id={index}
               sentByCurrentUser={user_name == message.sender}
             />
           );
@@ -84,54 +85,4 @@ export default function Chat({ event_id }: ChatProps) {
       />
     </div>
   );
-}
-
-function useChannel(topic, params, onJoin) {
-  console.log("INSIDE THE HOOK");
-  const { socket } = useContext(SocketContext);
-  const [channel, setChannel] = useState(null);
-
-  const onJoinFun = useRef(onJoin);
-
-  useEffect(() => {
-    if (onJoinFun) {
-      onJoinFun.current = onJoin;
-    }
-  }, []);
-
-  useEffect(() => {
-    console.log("SOMETHING BIG HAPPENED");
-    if (socket === null) {
-      console.log("socket is null");
-      return;
-    }
-    const ch = socket.channel(topic, params);
-    ch.join().receive("ok", (message) => onJoinFun.current(ch, message));
-    setChannel(ch);
-
-    return () => {
-      console.log("unsubscribing from channel");
-      ch.leave();
-      setChannel(null);
-    };
-  }, [socket, topic, params]);
-
-  console.log("SOCKET", socket);
-  console.log("THIS IS THE CHANNEL");
-  console.log(channel);
-  return channel;
-}
-
-function pushPromise(push) {
-  return new Promise((resolve, reject) => {
-    if (!push) {
-      return reject("no push");
-    }
-    push.receive("ok", resolve).receive("error", reject);
-    // .receive('timeout', reject('timeout'));
-  });
-}
-
-function sendMessage(channel, event, payload) {
-  return pushPromise(channel.push(event, payload));
 }

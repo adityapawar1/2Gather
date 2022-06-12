@@ -16,14 +16,14 @@ function TagsInput(){
     }
 
     return (
-        <div className="tags-input-container">
+        <div className="tags-input-container p-2">
             { tags.map((tag, index) => (
                 <div className="tag-item" key={index}>
                     <span className="text">{tag}</span>
                     <span className="close" onClick={() => removeTag(index)}>&times;</span>
                 </div>
             )) }
-            <input onKeyDown={handleKeyDown} type="text" className="tags-input" placeholder="Type and Enter something..." />
+            <input onKeyDown={handleKeyDown} type="text" className="tags-input" placeholder="Find Gatherings..." />
         </div>
     )
 }

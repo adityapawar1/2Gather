@@ -1,196 +1,107 @@
-import React from "react";
-import axios from "axios";
-import "./signup.css";
-// eslint-disable-next-line
-import Tags from "../../components/SignupTags/Tags";
-import {SubmitSignupLink} from './SignupElement'
-// git pls
-class Signup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      validity: "",
-      passwordStatus: "",
-      usernameStatus: "",
-      emailStatus: "",
-      phoneStatus: "",
-    };
-  }
+import React, {useState, useEffect} from 'react';
+import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import './form.css';
+import Tags from '../../components/tags/Tags';
 
-  SubmitSignupHandler = async (e) => {
+function SignUp(){
+    const [loading, setLoading] = useState(true);
+    const [message, setMessage] = useState("");
+
+
+
+  function handleSubmit(e){
     e.preventDefault();
-    var data = JSON.stringify({
-      "name": document.getElementById("username").value,
-      "password": document.getElementById("password").value,
-      "phone": document.getElementById("phone").value,
-      "email": document.getElementById("email").value,
-      "tags": [
-        "bbal",
+    const formData = new FormData(e.target);
+    formData.append('tags', [
+        "basketball",
         "robotics",
         "soccer"
-      ]
-    });
+    ]);
 
-    console.log(data);
-
-    let response = await axios({
-      method: "post",
-      url: "http://localhost:4000/api/user/signup",
-      data: data,
-      headers: { 'Content-Type': 'application/json' },
-      data : data
-    });
-    console.log(response);
-    if (response.data.hasOwnProperty("valid")) {
-      if (!response.data.valid) {
-        this.setState({
-          passwordStatus: "",
-          usernameStatus: "",
-          emailStatus: "",
-          phoneStatus: "",
-          validity: "The form was invalid",
-        });
-      } else {
-        this.setState({
-          passwordStatus: "",
-          usernameStatus: "",
-          emailStatus: "",
-          phoneStatus: "",
-          validity: "Redirecting...",
-        });
-        this.props.setUser(response.data.id);
-      }
-    } else if (response.data.hasOwnProperty("error")) {
-      this.setState({
-        validity: "",
-      });
-      if (response.data.error.hasOwnProperty("password")) {
-        this.setState({
-          passwordStatus: response.data.error.password[0],
-        });
-      } else {
-        this.setState({
-          passwordStatus: "",
-        });
-      }
-      if (response.data.error.hasOwnProperty("username")) {
-        this.setState({
-          usernameStatus: response.data.error.username[0],
-        });
-      } else {
-        this.setState({
-          usernameStatus: "",
-        });
-      }
-      if (response.data.error.hasOwnProperty("email")) {
-        this.setState({
-          emailStatus: response.data.error.email[0],
-        });
-      } else {
-        this.setState({
-          emailStatus: "",
-        });
-      }
-      if (response.data.error.hasOwnProperty("phone")) {
-        this.setState({
-          phoneStatus: response.data.error.phone[0],
-        });
-      } else {
-        this.setState({
-          phoneStatus: "",
-        });
-      }
+    for (var pair of formData.entries()) {
+      console.log(pair[0]+ ':' + pair[1]); 
     }
-  };
-  render() {
-    return (
-      <React.Fragment>
-        <div className="signup">
-          <div className="spaceTopSignup">
-            <label className="error">{this.state.validity}</label>
-            <label htmlFor="username" class="labelSignup">
-              Username
-            </label>
-            <br></br>
-            <br></br>
-            <br></br>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              class="loginInput"
-            />
-            <br></br>
-            <label className="error">{this.state.usernameStatus}</label>
-          </div>
-          <div>
-            <label htmlFor="password" class="labelSignup">
-              Password
-            </label>
-            <br></br>
-            <br></br>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="loginInput"
-            />
-            <br></br>
-            <label className="error">{this.state.passwordStatus}</label>
-          </div>
-          <div>
-            <label htmlFor="email" class="labelSignup">
-              Email
-            </label>
-            <br></br>
-            <br></br>
-            <input type="text" name="email" id="email" class="loginInput" />
-            <br></br>
-            <label className="error">{this.state.emailStatus}</label>
-          </div>
-          <div>
-            <label htmlFor="phone" class="labelSignup">
-              Phone Number
-            </label>
-            <br></br>
-            <br></br>
-            <input type="tel" name="phone" id="phone" class="loginInput" />
-            <br></br>
-            <label className="error">{this.state.phoneStatus}</label>
-          </div>
-          <div className="interests">
-            <label htmlFor="tags" class="labelSignup">
-              My Interests
-            </label>
-            <br></br>
-            <Tags></Tags>
-            <br></br>
-            <label className="error">{this.state.phoneStatus}</label>
-            <button className="submitButton" onClick={this.SubmitSignupHandler}>
-              Sign Up
-            </button>
-          </div>
-          {/* <div>
-                        <label class="gender">Gender:&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;F</label>
-                        <br></br>
-                    <label class="switch">
-                        <input type="checkbox" id="gender" />
-                        <span class="slider round"></span>
-                    </label>
-                        <br></br>
-                        <label className="error">{this.state.genderStatus}</label>
-                    </div> */}
-          <div class="container1">
-            
-            {/* eslint-disable-next-line */}
-            {/* <a href="#" onClick={this.SubmitSignupHandler}>
-                        <SubmitSignupLink to="/" class="submitButton">Submit</SubmitSignupLink>
-                    </a> */}
-          </div>
-        </div>
-      </React.Fragment>
-    );
+
+
+    const requestOptions = {
+      method: 'POST',
+      body: formData,
+      redirect: "follow"
+    };
+    fetch("http://localhost:4000/api/users/create", requestOptions)
+    .then( async response => response.text())
+    .then( response =>  {
+
+        setMessage(response);
+        setLoading(false);
+
+        if (!response.ok) {
+            // get error message from body or default to response status
+            const errorResponse = (response && response.message) || response.status;
+            return Promise.reject(errorResponse);
+        }
+    })
+    .catch(err => {
+       console.log(err);
+    });
   }
+
+  useEffect(() => {
+        console.log(message);
+    // console.log('error: ', error);
+    // console.log(message);
+    }, [message]);
+
+
+  return(
+    <>
+      <Container className="SignUpContainer" fluid>
+        <Form className="SignUpForm" onSubmit={handleSubmit}>
+            <h1 className="text-center m-5">
+              Sign Up
+            </h1>
+                <Row>
+                    <Col md>
+                      <Form.Group className="m-2">
+                          <Form.Label>Name</Form.Label>
+                          <Form.Control name="name" type="text" placeholder="Name" />
+                      </Form.Group>
+                      <Form.Group className="m-2">
+                          <Form.Label>Phone Number</Form.Label>
+                          <Form.Control name="phone" type="text" placeholder="1 (555) 555 5555 " />
+                      </Form.Group>
+                    </Col>
+                    <Col md>
+                    <Form.Group className="m-2" controlId="formBasicPassword">
+                          <Form.Label>Password</Form.Label>
+                          <Form.Control name="password" type="password" placeholder="Password" />
+                      </Form.Group>
+                      <Form.Group className="m-2">
+                          <Form.Label>Email</Form.Label>
+                          <Form.Control name="email" type="email" placeholder="Email" />
+                      </Form.Group>
+                    </Col>
+                </Row>
+                <Form.Group className="m-2">
+                    <Form.Label>Tags</Form.Label>
+                    <Tags/>
+                </Form.Group>
+                <div className="text-center">
+                  <Button className="btn-md btn-block mt-4 mb-4 bg-blue" variant="primary" type="submit">
+                    Sign Up
+                  </Button>
+                </div>
+                <div className="text-muted tosText">
+                  By continuing to create an account, you agree to 2Gather's <a href="#">Terms of Service</a>.
+                </div>
+                <hr size="2" className="separateLine" />
+                <Form.Text className="text-center">
+                  Already have an account? <a href="/login">Login</a>
+                </Form.Text>
+          </Form>
+      </Container>
+    </>
+  );
 }
 
-export default Signup;
+export default SignUp

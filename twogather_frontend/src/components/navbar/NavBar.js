@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import Modals from '/Users/roshanb/Documents/GitHub/2Gather/twogather_frontend/src/components/Modal/Modal.js';
+// import Modals from '/Users/roshanb/Documents/GitHub/2Gather/twogather_frontend/src/components/Modal/Modal.js';
 import {
   Navbar,
   Container,
   Row,
   Col,
-  Button
+  Button,
+  Modal,
 } from 'react-bootstrap';
 import SearchBar from '../searchBar/SearchBar';
 
@@ -18,7 +19,7 @@ function NavBar() {
   const [show, setShow] = useState(false);
   return (
       <Container fluid>
-        <Modals show={show}/>
+        <Modal show={show}/>
         <Row className="p-3">
           <Col xs={2} className="text-left">
             <Navbar.Brand>

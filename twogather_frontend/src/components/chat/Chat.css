@@ -1,11 +1,12 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .message-by-user {
+  float: right;
   @apply bg-blue-600 rounded-br-none text-white align-baseline;
 }
 
 .message-by-other {
-  @apply bg-gray-300 rounded-tl-none text-black justify-start;
-} */
+  @apply bg-gray-200 rounded-tl-none text-black justify-start;
+}

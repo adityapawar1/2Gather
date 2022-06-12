@@ -15,6 +15,11 @@ import { UserProvider } from "./UserContext";
 // import { SocketProvider } from "./SocketContext";
 import Event from "./components/Events/Event";
 import EventList from "./components/Events/EventList";
+import { Link } from "react-router-dom";
+
+function RouterButton({ link }) {
+  return <Link to={link}>{link}</Link>;
+}
 
 function App() {
   const socketUrl = "ws://localhost:4000/socket";
@@ -32,19 +37,22 @@ function App() {
           user_name: "Some Person",
           user_email: "test@gmail.com",
           user_id: 5,
+          jwt_token:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTUwOTA2NzYsImlhdCI6MTY1NTA2MTg3NiwiaWQiOjMzLCJpc3MiOiIyZ2F0aGVyLWF1dGgiLCJqdGkiOiIycnJ2YzBmaWZmOThsZ3ZsMDgwMDAwbzQiLCJuYmYiOjE2NTUwNjE4NzZ9.iFPg9uyG2jwasj_RuIXBd_TApiIE6ohkTU4onObZIRc",
         }}
       >
         <SocketProvider url={socketUrl} options={socketOptions}>
-          {/* <Router> */}
-          {/* <NavBar/> */}
-          {/* <Signup /> */}
-          {/* <Routes> */}
-          {/* <Route exact path="/home" element={<Home/>} />
+          <Router>
+            <RouterButton link="/profile" />
+            {/* <NavBar/> */}
+            {/* <Signup /> */}
+            <Routes>
+              {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}
-          {/* <Events /> */}
-          <Route exact path="/profile" element={<Chat event_id={"jdksa"} />} />
-          {/* </Routes>
-    </Router> */}
+              {/* <Events /> */}
+              <Route exact path="/profile" element={<Chat event_id={"4"} />} />
+            </Routes>
+          </Router>
           {/* <SearchBar /> */}
         </SocketProvider>
       </UserProvider>

@@ -12,7 +12,7 @@ import './navbar.css';
 
 function NavBar(){
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar>
       <Container>
         <Navbar.Brand href="#home">
           <img

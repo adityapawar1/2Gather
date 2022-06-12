@@ -24,7 +24,7 @@ class EventInfo extends React.Component {
                 </div>
                 <div id = "bottom">
                     <div className="tabs">
-                        <EventInfoTabs/>
+                        <EventInfoTabs />
                     </div>
                   
                 </div>

@@ -1,7 +1,4 @@
 defmodule GatherWeb.Plugs.AuthPlug do
-  @moduledoc """
-    A plug for parsing JWT tokens from a request
-  """
   import Plug.Conn
 
   def init(_) do
@@ -9,15 +6,10 @@ defmodule GatherWeb.Plugs.AuthPlug do
 
   def call(conn, _opts) do
     token = get_req_header(conn, "jwt_token") |> List.first()
-    token =
-      case token do
-        nil -> ""
-        _ -> token
-      end
 
     %{"id" => id} =
       case Gather.Signer.validate(token) do
-        {:ok, %{"id" => _username} = claims} -> claims
+        {:ok, %{"id" => _id} = claims} -> claims
         _ -> %{"id" => ""}
       end
 

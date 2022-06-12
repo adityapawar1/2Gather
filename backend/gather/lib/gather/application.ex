@@ -15,7 +15,8 @@ defmodule Gather.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Gather.PubSub},
       # Start the Endpoint (http/https)
-      GatherWeb.Endpoint
+      GatherWeb.Endpoint,
+      Gather.ChatDBManager
       # Start a worker by calling: Gather.Worker.start_link(arg)
       # {Gather.Worker, arg}
     ]

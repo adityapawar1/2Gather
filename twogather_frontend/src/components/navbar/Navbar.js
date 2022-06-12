@@ -6,25 +6,29 @@ import {
   NavDropdown,
   Form,
   FormControl,
-  Button,
-} from "react-bootstrap";
-import "./navbar.css";
+  Button
+} from 'react-bootstrap';
+import SearchBar from '../searchBar/SearchBar';
+
+import './navbar.css';
+import logo from '../../assets/logo_75.png';
 
 // git pls
 function NavBar() {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           <img
-            alt=""
-            src="/logo.svg"
-            width="30"
-            height="30"
+            alt="Logo"
+            src={logo}
+            width="40"
+            height="40"
             className="d-inline-block align-top"
-          />{" "}
-          React Bootstrap
+          />{' '}
+          2Gather
         </Navbar.Brand>
+        <SearchBar/>
       </Container>
     </Navbar>
   );

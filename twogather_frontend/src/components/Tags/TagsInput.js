@@ -8,12 +8,12 @@ function TagsInput({ children }, props) {
     const value = e.target.value;
     if (!value.trim()) return;
     setTags([...tags, value]);
-    // props.tagger(value);
+    props.tagger(value);
     e.target.value = "";
   }
 
   function removeTag(index) {
-    // props.rtagger(index);
+    props.rtagger(index);
     setTags(tags.filter((el, i) => i !== index));
   }
 

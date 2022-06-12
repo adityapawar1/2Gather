@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./pages/home/Home.js";
-import Profile from "./pages/profile/Profile.js";
+import Profile from "./pages/profile/profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
 import Signup from "./pages/signup/Signup.js";
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <UserProvider
+      {/* <UserContext.Provider
         value={{
           user_name: "Some Person",
           user_email: "test@gmail.com",
@@ -36,19 +36,19 @@ function App() {
         }}
       >
         <SocketProvider url={socketUrl} options={socketOptions}>
-          {/* <Router> */}
-          {/* <NavBar/> */}
-          {/* <Signup /> */}
-          {/* <Routes> */}
-          {/* <Route exact path="/home" element={<Home/>} />
+          <Chat event_id={"dasjkldja"}></Chat>
+        {/* <Router> */}
+        {/* <NavBar/> */}
+        {/* <Signup /> */}
+        {/* <Routes> */}
+        {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}
-          {/* <Events /> */}
-          <Route exact path="/profile" element={<Chat event_id={"jdksa"} />} />
-          {/* </Routes>
+        <Events />
+        {/* </Routes>
     </Router> */}
-          {/* <SearchBar /> */}
-        </SocketProvider>
-      </UserProvider>
+        {/* <SearchBar /> */}
+        {/* </SocketProvider> */}
+      {/* </UserContext.Provider> */}
     </div>
   );
 }

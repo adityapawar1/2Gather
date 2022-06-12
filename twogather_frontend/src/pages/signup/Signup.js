@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 import './form.css';
+<<<<<<< HEAD
 import Tags from '../../components/Tags/Tags.js';
+=======
+import Tags from '../../components/Tags/Tags';
+>>>>>>> 5b5d9f53e32dd6db316e2d1016d34dd747e2914d
 
 function SignUp(){
     const [loading, setLoading] = useState(true);

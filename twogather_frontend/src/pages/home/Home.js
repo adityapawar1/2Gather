@@ -15,7 +15,7 @@ const Home = () => {
     <>    
       <NavBar/>
       <div className="greeting-header">
-        Welcome {user_name}
+        Welcome Vivek Nadig
       </div>
       <div>
         {tags.map((tag) => {

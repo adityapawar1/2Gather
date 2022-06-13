@@ -9,16 +9,14 @@ const Home = () => {
   //user data, still have to add api though
   const [{ user_name, user_tags, jwt_token }, setData] =useContext(UserContext);
 
-  const tags = ["soccer", "hackathon"]
-
   return (
     <>    
       <NavBar/>
       <div className="greeting-header">
-        Welcome Vivek Nadig
+        Welcome {user_name}
       </div>
       <div>
-        {tags.map((tag) => {
+        {user_tags.map((tag) => {
           return(
             <div className="gathering-list">
               <EventList tag={tag}/>

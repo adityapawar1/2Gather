@@ -5,7 +5,6 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 
 import Event from "./Event.js";
 import "./event.css";
-import data from './data';
 
 
 const EventList = (props) => {
@@ -20,6 +19,7 @@ const EventList = (props) => {
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
+  const [data, setData] = useContext(UserContext);
 
   Object.keys(data).forEach(function(key) {
     console.log('Key : ' + key + ', Value : ' + data[key])})

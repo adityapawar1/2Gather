@@ -1,6 +1,5 @@
 import React from 'react';
 import './EventScroller.css';
-import events from './events.json';
 
 let bgColorList = ['03045e', '0077b6', '00b4d8', '90e0ef','ca40f8']
 function Event(props) {
@@ -29,7 +28,7 @@ class EventScroller extends React.Component {
       super(props)
       this.handleClick = this.handleClick.bind(this);
       this.state = {
-          eventJson: events.events
+          data: {}
       }
   }
 

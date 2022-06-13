@@ -3,7 +3,7 @@ import "./EventInfo.css";
 import Home from "../eventMap/EventMap";
 import EventInfoTabs from "../eventInfoTabs/EventInfoTabs";
 import Tags from "../UneditableTags/Tags";
-import events from "./events.json";
+import events from "../components/events/Events";
 
 export default function EventInfo(props) {
   const [event, setEvent] = useState({});

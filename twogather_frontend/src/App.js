@@ -2,13 +2,8 @@ import React, { useState } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
-<<<<<<< HEAD
-import Home from "./pages/home/Home.js";
-import Profile from "./pages/profile/profile.js";
-=======
 import Home from "./pages/home/Home.tsx";
-import Profile from "./pages/profile/Profile.js";
->>>>>>> 2001cd1ff16c8fcf960ca282bd7207c09c552222
+import Profile from "./pages/profile/profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
 // import Signup from "./pages/signup/Signup.js";
@@ -48,14 +43,14 @@ function App() {
       }}
     >
       <div className="App">
-        <SocketProvider url={socketUrl} options={socketOptions}>
+        {/* <SocketProvider url={socketUrl} options={socketOptions}> */}
           {/* <Router> */}
           
           <Router>
           <NavBar/>
           <Routes>
             <Route exact path="/home" element={<Home/>} />
-            <Route exact path="/profile" element={<Profile/>} />
+            <Route exact path="/profile" element={<SignUp/>} />
             
           </Routes>
         </Router>
@@ -69,6 +64,7 @@ function App() {
       </div>
     </UserProvider>
   );
+
 }
 
 export default App;

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./pages/home/Home.tsx";
+// import Home from "./pages/home/Home.tsx";
+import Home from "./pages/home/Home";
+
 import Profile from "./pages/profile/Profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
@@ -13,8 +15,8 @@ import Chat from "./components/chat/Chat.tsx";
 import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
 import { UserProvider } from "./UserContext";
 // import { SocketProvider } from "./SocketContext";
-import Event from "./components/Events/Event.tsx";
-import EventList from "./components/Events/EventList.tsx";
+import Event from "./components/Events/Event.js";
+import EventList from "./components/Events/EventList.js";
 import { Link } from "react-router-dom";
 
 function RouterButton({ link }) {
@@ -52,7 +54,6 @@ function App() {
               <Route exact path="/" element={<Chat event_id={"4"} />} />
             </Routes>
           </Router>
-          {/* <SearchBar /> */}
         </SocketProvider>
       </UserProvider>
     </div>

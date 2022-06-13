@@ -3,7 +3,7 @@ import { UserContext } from "../../UserContext";
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
-import Event from "./Event.tsx";
+import Event from "./Event.js";
 import "./event.css";
 import data from './data';
 
@@ -20,6 +20,11 @@ const EventList = (props) => {
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
+
+  Object.keys(data).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + data[key])})
+
+  console.log(JSON.stringify(data));
   return (
     <div>
       <div className="list-header">
@@ -39,22 +44,23 @@ const EventList = (props) => {
           />
         </div>
       </div>
-      {/* map data */}
       <div id="slider" className="event-list pl-3">
-        {data.map((key, value) => {
-          console.log(`key: ${key} and value: ${value}`)
-          // return (
-          //   <div className="event-card">
-          //     <Event
-          //       start_time={event.time.start}
-          //       end_time={event.time.end}
-          //       participants={event.participants}
-          //       address={event.location.address}
-          //       title={event.title}
-          //     />
-          //   </div>
-          // );
-        })}
+        {
+          data[props.tag].map((event) => {
+            return(
+              <div className="event-card">
+                <Event
+                  tag={props.tag}
+                  start_time={event.start_time}
+                  end_time={event.end_time}
+                  participants={event.participants}
+                  address={event.address}
+                  title={event.title}
+                />
+              </div>
+            )
+          })
+        }
       </div>
     </div>
   );

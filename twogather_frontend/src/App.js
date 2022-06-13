@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./pages/home/Home.tsx";
+// import Home from "./pages/home/Home.tsx";
+import Home from "./pages/home/Home";
+
 import Profile from "./pages/profile/Profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
@@ -13,7 +15,7 @@ import Chat from "./components/chat/Chat.tsx";
 import { SocketProvider } from "@ericlathrop/phoenix-js-react-hooks";
 import { UserProvider } from "./UserContext";
 // import { SocketProvider } from "./SocketContext";
-import Event from "./components/Events/Event.tsx";
+import Event from "./components/Events/Event.js";
 import EventList from "./components/Events/EventList.js";
 import { Link } from "react-router-dom";
 
@@ -41,20 +43,7 @@ function App() {
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTUwOTA2NzYsImlhdCI6MTY1NTA2MTg3NiwiaWQiOjMzLCJpc3MiOiIyZ2F0aGVyLWF1dGgiLCJqdGkiOiIycnJ2YzBmaWZmOThsZ3ZsMDgwMDAwbzQiLCJuYmYiOjE2NTUwNjE4NzZ9.iFPg9uyG2jwasj_RuIXBd_TApiIE6ohkTU4onObZIRc",
         }}
       >
-        <SocketProvider url={socketUrl} options={socketOptions}>
-          <Router>
-            <RouterButton link="/profile" />
-            {/* <NavBar/> */}
-            {/* <Signup /> */}
-            <Routes>
-              {/* <Route exact path="/home" element={<Home/>} />
-        <Route exact path="/profile" element={<Events/>} /> */}
-              {/* <Events /> */}
-              <Route exact path="/profile" element={<Chat event_id={"4"} />} />
-            </Routes>
-          </Router>
-          {/* <SearchBar /> */}
-        </SocketProvider>
+        <Home/>
       </UserProvider>
     </div>
   );

@@ -43,7 +43,17 @@ function App() {
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTUwOTA2NzYsImlhdCI6MTY1NTA2MTg3NiwiaWQiOjMzLCJpc3MiOiIyZ2F0aGVyLWF1dGgiLCJqdGkiOiIycnJ2YzBmaWZmOThsZ3ZsMDgwMDAwbzQiLCJuYmYiOjE2NTUwNjE4NzZ9.iFPg9uyG2jwasj_RuIXBd_TApiIE6ohkTU4onObZIRc",
         }}
       >
-        <Home/>
+        <SocketProvider url={socketUrl} options={socketOptions}>
+          <Router>
+            {/* <RouterButton link="/profile" /> */}
+            {/* <NavBar/> */}
+            {/* <Signup /> */}
+            <Routes>
+              <Route exact path="/home" element={<Home/>} />
+              <Route exact path="/profile" element={<Chat event_id={"4"} />} />
+            </Routes>
+          </Router>
+        </SocketProvider>
       </UserProvider>
     </div>
   );

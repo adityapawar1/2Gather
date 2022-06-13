@@ -18,7 +18,7 @@ import { UserProvider } from "./UserContext";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import { SocketProvider } from "./SocketContext";
 import Event from "./components/Events/Event.tsx";
-import EventList from "./components/Events/EventList.tsx";
+import EventList from "./components/Events/EventList.js";
 import { Link } from "react-router-dom";
 
 function RouterButton({ link }) {
@@ -45,7 +45,7 @@ function App() {
       <div className="App">
         <SocketProvider url={socketUrl} options={socketOptions}/>
           {/* <Router> */}
-          <NavBar/>
+          <Home/>
           {/* <SignUp/> */}
           {/* <Login /> */}
           {/* <Routes> */}

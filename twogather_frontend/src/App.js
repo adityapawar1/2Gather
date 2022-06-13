@@ -24,9 +24,9 @@ function RouterButton({ link }) {
 function App() {
   const socketUrl = "ws://localhost:4000/socket";
   const socketOptions = {
-    // logger: (kind, msg, data) => {
-    //   console.log(`${kind}: ${msg}`, data);
-    // },
+    logger: (kind, msg, data) => {
+      console.log(`${kind}: ${msg}`, data);
+    },
     params: { token: "dasdsadasdasdasd" },
   };
 
@@ -43,14 +43,13 @@ function App() {
       >
         <SocketProvider url={socketUrl} options={socketOptions}>
           <Router>
-            <RouterButton link="/profile" />
             {/* <NavBar/> */}
             {/* <Signup /> */}
             <Routes>
               {/* <Route exact path="/home" element={<Home/>} />
         <Route exact path="/profile" element={<Events/>} /> */}
               {/* <Events /> */}
-              <Route exact path="/profile" element={<Chat event_id={"4"} />} />
+              <Route exact path="/" element={<Chat event_id={"4"} />} />
             </Routes>
           </Router>
           {/* <SearchBar /> */}

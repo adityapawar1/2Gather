@@ -34,10 +34,12 @@ const getPastMessages = (
 const jwt_token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTUwOTQ4NjYsImlhdCI6MTY1NTA2NjA2NiwiaWQiOjMzLCJpc3MiOiIyZ2F0aGVyLWF1dGgiLCJqdGkiOiIycnJ2amtkN3FnYzBtM3JlbjgwMDAwMjQiLCJuYmYiOjE2NTUwNjYwNjZ9.y0mHh2k5PB26bqtMuVw9Gcz9Y1sV_3YOJYjDl3fzct4";
 
+const funny = Math.random() > 0.5 ? "John" : "Vivek";
 export default function Chat({ event_id }: ChatProps) {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [{ user_name, user_id }, setData]: [UserContextType, any] =
+  const [{ user_id }, setData]: [UserContextType, any] =
     useContext(UserContext);
+  const user_name = funny;
 
   const { socket } = useContext(SocketContext);
   const [channel, setChannel] = useState<any>(null);
@@ -48,6 +50,7 @@ export default function Chat({ event_id }: ChatProps) {
   };
   useEffect(() => {
     autoScroll();
+    console.log(messages);
   }, [messages]);
 
   useEffect(() => {
@@ -70,15 +73,26 @@ export default function Chat({ event_id }: ChatProps) {
     };
   }, [socket, event_id, jwt_token]);
 
-  useEventHandler(channel, "new_msg", ({ message }) => {
-    console.log("new message", message);
-    let chatMessage: Message = {
-      sender: message.sender,
-      message: message.message,
-    };
+  useEffect(() => {
+    console.log("Event handler effect");
+    if (channel === null) {
+      return;
+    }
 
-    setMessages([...messages, chatMessage]);
-  });
+    const ref = channel.on("new_msg", ({ message }) => {
+      console.log("new message", message);
+      let chatMessage: Message = {
+        sender: message.sender,
+        message: message.message,
+      };
+
+      setMessages((messages) => [...messages, chatMessage]);
+    });
+
+    return () => {
+      channel.off("new_msg", ref);
+    };
+  }, [channel]);
 
   const sendMessageHandler = () => {
     let doc: any = document;
@@ -88,12 +102,12 @@ export default function Chat({ event_id }: ChatProps) {
       sender: user_name || "First Last",
       body: message_body,
     };
-    console.log(sendMessage(channel, "new_msg", message));
+    sendMessage(channel, "new_msg", message);
     doc.getElementById("message-input").value = "";
   };
 
   return (
-    <div className="w-1/5 h-fit m-auto my-2">
+    <div className="w-1/5 h-screen m-auto my-2">
       <div className="flex flex-col overflow-auto h-screen">
         {messages.map((message: Message, index: number): ReactNode => {
           return (
@@ -101,7 +115,7 @@ export default function Chat({ event_id }: ChatProps) {
               user={message.sender}
               body={message.message}
               key={index}
-              sentByCurrentUser={user_name == message.sender}
+              sentByCurrentUser={user_name === message.sender}
             />
           );
         })}
@@ -124,32 +138,3 @@ export default function Chat({ event_id }: ChatProps) {
     </div>
   );
 }
-
-const testMessages: Message[] = [
-  {
-    sender: "First Last",
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-  },
-  {
-    sender: "Some Person",
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-  },
-  { sender: "First Last", message: "yooooooo" },
-  { sender: "First Last", message: "Im so excited" },
-  {
-    sender: "Some Person",
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-  },
-  { sender: "First Last", message: "Ill be there" },
-  { sender: "Some Person", message: "Got it" },
-  {
-    sender: "First Last",
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-  },
-  { sender: "First Last", message: "hello there" },
-  { sender: "Some Person", message: "i will not be there" },
-];

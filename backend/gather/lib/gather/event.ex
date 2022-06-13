@@ -30,7 +30,7 @@ defmodule Gather.Event do
                 binary | []
               )
     def encode(%Gather.Event{} = value, opts) do
-      Jason.Encode.map(Map.take(value, [:title, :location, :organizer, :description, :time, :participants, :tags]), opts)
+      Jason.Encode.map(Map.take(value, [:id, :title, :location, :organizer, :description, :time, :participants, :tags]), opts)
     end
   end
 end

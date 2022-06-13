@@ -23,7 +23,10 @@ const Home = () => {
 
   useEffect(() => {
     [
-      ...user_tags,
+      "soccer",
+      "basketball",
+      "sports",
+      "death",
       "",
       "",
       "",

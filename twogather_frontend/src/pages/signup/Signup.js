@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import "./form.css";
-import Tags from "../../components/tags/Tags";
+
+import Tags from "../../components/tags/Tags.js";
+
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink,
+  NavPFP,
+} from "./signupElement.js";
 
 function SignUp() {
   const [loading, setLoading] = useState(true);
@@ -21,7 +32,7 @@ function SignUp() {
       body: formData,
       redirect: "follow",
     };
-    fetch("http://localhost:4000/api/user/signup", requestOptions)
+    fetch("http://localhost:4000/api/users/create", requestOptions)
       .then(async (response) => response.text())
       .then((response) => {
         setMessage(response);
@@ -85,13 +96,15 @@ function SignUp() {
             <Tags />
           </Form.Group>
           <div className="text-center">
-            <Button
-              className="btn-md btn-block mt-4 mb-4 bg-blue"
-              variant="primary"
-              type="submit"
-            >
-              Sign Up
-            </Button>
+            <NavLink to="/home">
+              <Button
+                className="btn-md btn-block mt-4 mb-4 bg-blue"
+                variant="primary"
+                type="submit"
+              >
+                Sign Up
+              </Button>
+            </NavLink>
           </div>
           <div className="text-muted tosText">
             By continuing to create an account, you agree to 2Gather's{" "}

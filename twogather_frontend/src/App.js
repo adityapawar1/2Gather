@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./pages/home/Home.tsx";
-import Profile from "./pages/profile/Profile.js";
 import NavBar from "./components/navbar/NavBar.js";
 import SearchBar from "./components/searchBar/SearchBar.js";
 // import Signup from "./pages/signup/Signup.js";
@@ -29,7 +28,7 @@ function App() {
   const socketUrl = "ws://localhost:4000/socket";
   const socketOptions = {
     // logger: (kind, msg, data) => {
-    //   console.log(`${kind}: ${msg}`, data);
+    //   console.log(${kind}: ${msg}, data);
     // },
     params: { token: "dasdsadasdasdasd" },
   };
@@ -43,18 +42,13 @@ function App() {
       }}
     >
       <div className="App">
-        <SocketProvider url={socketUrl} options={socketOptions}>
-          {/* <Router> */}
-          {/* <NavBar/> */}
-          {/* <SignUp /> */}
-          <Login />
-          {/* <Routes> */}
-          {/* <Route exact path="/home" element={<Home/>} />
-          <Route exact path="/profile" element={<Events/>} /> */}
-          {/* <Home /> */}
-          {/* <Events/> */}
-          {/* <Events /> */}
-        </SocketProvider>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/profile" element={<SignUp />} />
+          </Routes>
+        </Router>
       </div>
     </UserProvider>
   );

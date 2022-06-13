@@ -31,28 +31,6 @@ function App() {
   };
 
   return (
-<<<<<<< HEAD
-    <UserProvider
-      value={{
-        user_name: "Some Person",
-        user_email: "test@gmail.com",
-        user_id: 5,
-      }}
-    >
-      <div className="App">
-        <SocketProvider url={socketUrl} options={socketOptions}/>
-          {/* <Router> */}
-          <Home/>
-          {/* <SignUp/> */}
-          {/* <Login /> */}
-          {/* <Routes> */}
-          {/* <Route exact path="/home" element={<Home/>} />
-          <Route exact path="/profile" element={<Events/>} /> */}
-        {/* <Home/> */}
-          {/* <Results/> */}
-      </div>
-    </UserProvider>
-=======
     <div className="App">
       <UserProvider
         value={{
@@ -79,7 +57,6 @@ function App() {
         </SocketProvider>
       </UserProvider>
     </div>
->>>>>>> b0522755d0924f8b2f2f6c474c9e8ae95447bd09
   );
 }
 

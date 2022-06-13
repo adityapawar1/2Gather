@@ -38,7 +38,6 @@ defmodule GatherWeb.UserController do
       json(conn, %{"error" => "Invalid email or password"})
     else
       if Bcrypt.verify_pass(password, user.password) do
-        IO.inspect({password, user.password})
         token = Gather.Signer.generate_token(user.id)
         json(conn, %{token: token})
       else
@@ -71,7 +70,11 @@ defmodule GatherWeb.UserController do
     json(conn, %{"error" => "Missing one or more required parameters"})
   end
 
-  defp lowercase_tags(tags) do
+  defp lowercase_tags(tags) when is_list(tags) do
     Enum.map(tags, fn tag -> String.downcase(tag) end)
+  end
+
+  defp lowercase_tags(tags) when is_bitstring(tags) do
+    Enum.map(tags |> String.split(","), fn tag -> String.downcase(tag) end)
   end
 end

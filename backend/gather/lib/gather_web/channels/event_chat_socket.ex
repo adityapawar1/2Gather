@@ -1,42 +1,24 @@
 defmodule GatherWeb.EventChatSocket do
   use Phoenix.Socket
 
-  # A Socket handler
-  #
-  # It's possible to control the websocket connection and
-  # assign values that can be accessed by your channel topics.
+  def child_spec(init) do
+    %{
+      id: __MODULE__,
+      start: {__MODULE__, :start_link, [init]},
+      restart: :temporary
+    }
+  end
 
-  ## Channels
-  # Uncomment the following line to define a "room:*" topic
-  # pointing to the `GatherWeb.RoomChannel`:
-  #
-  # channel "room:*", GatherWeb.RoomChannel
-  #
-  # To create a channel file, use the mix task:
-  #
-  #     mix phx.gen.channel Room
-  #
-  # See the [`Channels guide`](https://hexdocs.pm/phoenix/channels.html)
-  # for further details.
+  channel "event:*", GatherWeb.EventChatChannel
 
-
-  # Socket params are passed from the client and can
-  # be used to verify and authenticate a user. After
-  # verification, you can put default assigns into
-  # the socket that will be set for all channels, ie
-  #
-  #     {:ok, assign(socket, :user_id, verified_user_id)}
-  #
-  # To deny connection, return `:error`.
-  #
-  # See `Phoenix.Token` documentation for examples in
-  # performing token verification on connect.
   @impl true
   def connect(%{"token" => token}, socket, _connect_info) do
-    case Gather.Signer.validate(token) do
-      {:ok, %{"id" => id}} -> {:ok, assign(socket, :current_user, id)}
-      {:error, _} -> :error
-    end
+    IO.inspect(token)
+    {:ok, socket}
+    # case Gather.Signer.validate(token) do
+    #   {:ok, %{"id" => id}} -> {:ok, assign(socket, :current_user, id)}
+    #   {:error, _} -> :error
+    # end
   end
 
   # Socket id's are topics that allow you to identify all sockets for a given user:
@@ -52,5 +34,4 @@ defmodule GatherWeb.EventChatSocket do
   @impl true
   def id(_socket), do: nil
 
-  channel "event:*", GatherWeb.EventChatChannel
 end

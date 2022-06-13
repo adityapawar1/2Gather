@@ -9,12 +9,11 @@ export default function ChatMessage({
   user,
   sentByCurrentUser,
 }: ChatMessageProps) {
-  console.log("sadkasjkldjaskl: ", body, user, sentByCurrentUser);
   return (
     <div className={`m-0 ${sentByCurrentUser ? "float-right" : ""}`}>
       <p className="text-gray-500 m-0 mx-1 w-fit text-xs">{user}</p>
       <p
-        className={`text-md  w-fit py-1 px-2 rounded-xl text-left ${
+        className={`text-md font-sans w-fit py-1 px-2 font-medium rounded-xl text-left ${
           sentByCurrentUser ? "message-by-user" : "message-by-other"
         }`}
       >

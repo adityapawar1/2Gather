@@ -45,22 +45,14 @@ function App() {
       <div className="App">
         {/* <SocketProvider url={socketUrl} options={socketOptions}> */}
           {/* <Router> */}
-          
-          <Router>
           <NavBar/>
-          <Routes>
-            <Route exact path="/home" element={<Home/>} />
-            <Route exact path="/profile" element={<SignUp/>} />
-            
-          </Routes>
-        </Router>
-          {/* <Login/> */}
-          {/* <Signup /> */}
+          {/* <SignUp/> */}
+          {/* <Login /> */}
           {/* <Routes> */}
           {/* <Route exact path="/home" element={<Home/>} />
           <Route exact path="/profile" element={<Events/>} /> */}
         {/* <Home/> */}
-        {/* <Events/> */}
+          {/* <Results/> */}
       </div>
     </UserProvider>
   );

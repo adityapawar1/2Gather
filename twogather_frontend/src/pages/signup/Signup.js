@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 import './form.css';
-import Tags from '../../components/Tags/Tags';
+
+import Tags from '../../components/Tags/Tags.js';
+
+
 import {
   Nav,
   NavLink,
@@ -11,6 +14,7 @@ import {
   NavBtnLink,
   NavPFP,
 } from './signupElement.js';
+
 
 function SignUp(){
     const [loading, setLoading] = useState(true);
